@@ -94,8 +94,48 @@ def delete_emptynotes(word):
 
 def delete_dollar(word):
     '''
-        definition の $x_n$ を xn に変える。
+        definition の $x_n$ を x_n に変える。
     '''
     s = word["translations"][0]["forms"][0]
     word["translations"][0]["forms"][0] = s.replace("$", "")
     return word
+
+from time import time
+import sys
+import concurrent.futures
+import itertools
+def add_relations_for_multi(task_words, entry_dict):
+    '''
+    r"{[a-zA-Z']}" に該当する単語のうち、エントリーのあるものだけを relations に加える。
+    "ja" の場合「・関連語」も対象にする。
+    '''
+    regex = r"\{[a-zA-Z']+\}"
+    #entry_dict = entry_dict.copy()
+    for word in task_words:
+        cs = word["contents"]
+        _ls = []
+        if has(cs, "notes"):
+            _ls = re.findall(regex, hqueryx(cs, "notes")["text"])
+        if has(cs, "関連語"):
+            _ls += re.findall(regex, hqueryx(cs, "関連語")["text"])
+        _ls = [re.sub(r'^[^a-zA-Z]+', '', re.sub(r'[^a-zA-Z]+$', '', e)) for e in _ls]
+        relations = []
+        for rel in _ls:
+            for entry in entry_dict[rel[0]]:
+                if entry["form"] == rel:
+                    relations.append(otm.relation("", entry))
+                    break
+        word["relations"] = relations
+    return task_words
+
+def add_relations(words):
+    '''
+    r"{[a-zA-Z']}" に該当する単語のうち、エントリーのあるものだけを relations に加える。
+    "ja" の場合「・関連語」も対象にする。
+    '''
+    regex = r"\{[a-zA-Z']+\}"
+    entry_list = [word["entry"] for word in words]
+    letters = ".abcdefgijklmnoprstuvwxyz"
+    letters += letters[1:].upper()
+    word_dict = {letter: [word for word in words if word["form"][0] == letter] for letter in letters}
+    add_relations_for_multi(words, word_dict)

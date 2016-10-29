@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 import xmltodict, json
 
-lang = ["eng", "jpn", "jbo", "epo"]
-
 def make_dict_from_xml (lang):
     xmlname = 'xml/jbo-{}-xml.xml'.format(lang)
     with open(xmlname, encoding="utf-8") as f:
