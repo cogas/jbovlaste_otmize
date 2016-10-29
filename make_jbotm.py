@@ -7,7 +7,7 @@ from ponjo_tweak import goodnotes, sortcontents, integrate_gloss, delete_emptyno
                         delete_dollar, add_relations, add_relations_for_multi
 import otmjson as otm
 
-lang_list = ["en", "ja", "jbo", "eo", "en-simple"]
+lang_list = ["en", "ja", "jbo", "eo", "en-simple", "de", "fr", "ru", "zh", "es"]
 special_lang_list = ["top3", "top5", "all"]
 
 def make_content (valsi, opt, title):
