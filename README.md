@@ -3,6 +3,14 @@ jbovlaste を OTM-json 形式に変換するスクリプトやその出力結果
 
 ``python make_jbotm.py [jpn/eng/jbo/epo/all]`` とすると、xml フォルダの ``jbo-XXX-xml.xml`` を json 形式に変換し、それを OTM-json 形式に変換したものを otm-jsonフォルダに保存します。中間体のjson形式は jsonフォルダに保存され、このフォルダ内に該当する json が存在する場合、このjsonを OTM-json 化に利用します。
 
+# dependency
+
+- xmltodict
+
+``pip install xmltodict``
+
+ちなみにおかゆの実行環境は Python3.5 です。
+
 # TO DO
 
 - jbovlaste から直接 XML を読み込み、それを OTM-json化する
