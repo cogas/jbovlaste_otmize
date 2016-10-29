@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-import json
-from attrdict import AttrDict
 
 '''
 * >> words, zpdic, lang
@@ -35,7 +33,7 @@ lang >> from, to
 '''
 OTM-jsonを操作するとき、[{title:, XXX:}]の型によく出くわす。
 そこで、{title:, XXX:} を BiDict とし、これのリストを BiDicts とする。
-content, variation, relation は XXX の違い（つまり、BiDict のサブクラス）であり、
+content, variation, relation は XXX の違いであり、
 これらをリストにしたものはすべて BiDicts として処理できる。
 '''
 
@@ -88,7 +86,7 @@ class BiDicts(list):
         for bidict in bidicts:
             if not isinstance(bidict, BiDict):
                 raise ValueError("Some of the elements are not BiDict instances.")
-            self.append(bidict)    
+            self.append(bidict)
 
     @staticmethod
     def mkfrom(dicts, alias="BiDict"):
@@ -218,16 +216,6 @@ class Words(list):
         for word in self:
             _ls = word.x
         return _ls
-
-def load (path, encoding='utf-8'):
-    '''
-        面倒くさがりのための path から直接 dict を得る関数。
-        ファイルオブジェクトから dict を作りたい場合は json モジュールの load を使う。
-    '''
-    with open(path, encoding=encoding) as f:
-        dic = json.load(f)
-    dic["words"] = Words.mkfrom(dic["words"])
-    return dic
 
 def query(obj, title):
     '''
