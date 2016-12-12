@@ -1,14 +1,14 @@
 # jbovlaste_otmizer
 jbovlaste を OTM-json 形式に変換するスクリプトやその出力結果
 
-``python make_jbotm.py [ja/en/jbo/eo/en-simple/all...]`` とすると、xml フォルダの ``jbo-XXX-xml.xml`` を json 形式に変換し、それを OTM-json 形式に変換したものを otm-jsonフォルダに保存します。中間体のjson形式は jsonフォルダに保存され、このフォルダ内に該当する json が存在する場合、このjsonを OTM-json 化に利用します。
+``python create_otm_jbovlaste.py [ja/en/jbo/eo/en-simple/...]`` とすると、xml フォルダの ``jbo-XXX-xml.xml`` を json 形式に変換し、それを OTM-json 形式に変換したものを otm-jsonフォルダに保存します。中間体のjson形式は jsonフォルダに保存され、このフォルダ内に該当する json が存在する場合、このjsonを OTM-json 化に利用します。
 
 ## 翻訳言語
 
-第一環境変数は ``make_jbotm.py`` 内の ``lang_list`` に依存しています。
+第1コマンドライン引数は ``create_otm_jbovlaste.py`` 内の ``LANG_LIST`` に依存しています。
 言語名は、[jbovlaste](http://jbovlaste.lojban.org/languages.html) の Language Tag に準拠しています。
 
-eg. ``ja``, ``en/ja``, ``jbo/en/ja/eo``
+eg. ``ja``, ``en ja``, ``jbo en ja eo``
 
 ## その他コマンド
 
@@ -36,7 +36,7 @@ eg. ``ja``, ``en/ja``, ``jbo/en/ja/eo``
 
 日本語辞書は notes に存在する雑多な項目をすべて独立した項目に変換しています。
 
-- 大意
+- 大意 -> glossword に統合しています。
 - 読み方
 - 用例（「…／…」の形式の例文）
 - 語呂合わせ
