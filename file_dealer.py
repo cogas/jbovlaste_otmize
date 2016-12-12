@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import xmltodict, json
+import xmltodict, json, zipfile
 
 class JbovlasteXmlDealer:
     def __init__(self, lang):
@@ -43,7 +43,7 @@ class ZipDealer:
     def zippy(self):
         filename_temp = 'otm-json/jbo-{}_otm.json'
         with zipfile.ZipFile(self.__zip_path, 'w', zipfile.ZIP_DEFLATED) as zf:
-            for lang in langs:
+            for lang in self.langs:
                 zf.write(filename_temp.format(lang))
             print("zipped: {}.".format(self.__zip_path))
 

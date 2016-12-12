@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import sys, json, zipfile, datetime, concurrent.futures, itertools, copy, re
+import sys, json, datetime, concurrent.futures, itertools, copy, re
 from time import time
 from file_dealer import ZipDealer, RawdictDealer, JbovlasteXmlDealer
 from collections import OrderedDict, defaultdict
