@@ -11,7 +11,7 @@ from vlaste_builder import DictionaryBuilder, WordBuilder, Metadata,\
 LANG_LIST = ["en", "ja", "jbo", "eo", "en-simple", "de", "fr", "ru", "zh", "es"]
 
 def make_content(valsi, title_name):
-    if title_name == 'keyword':
+    if title_name in ('keyword', 'glossword'):
         text_delimiter = "\n"
         component_type = dict
     elif title_name == 'rafsi':
@@ -37,6 +37,8 @@ def make_content(valsi, title_name):
                     word += "; {}".format(component["@sense"])
                 if title_name == "keyword":
                     word = "[{}]: {}".format(component["@place"], word)
+                if title_name == "glossword":
+                    word = "- {}".format(word)
                 text_list.append(word)
         return Content(title_name, text_delimiter.join(text_list))
     else:

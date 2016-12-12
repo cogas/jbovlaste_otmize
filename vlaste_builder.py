@@ -51,7 +51,7 @@ class DictionaryBuilder:
     @classmethod
     def load(cls, otmized_json):
         result = cls()
-        result.words.extend(otmized_json["words"])
+        result.words.extend([WordBuilder.load(word) for word in otmized_json["words"]])
         result.__metadata = {key: otmized_json[key] for key in otmized_json.keys()
                            if key != "words"}
         return result
@@ -82,6 +82,7 @@ class Metadata:
 
     def as_dict(self):
         return self.__dict
+
 
 class WordBuilder:
     '''Class building a Word object.'''
@@ -136,13 +137,10 @@ class WordBuilder:
 
     def build(self):
         _entry = self.entry._asdict()
-        _translations = [translation._asdict()
-                         for translation in self.translations]
-        _contents = [content._asdict() for content in self.contents]
-        _variations = [variation._asdict() for variation in self.variations]
-        _relations = [OrderedDict([('title', relation.title),
-                                   ('entry', relation.entry._asdict())])
-                                  for relation in self.relations]
+        _translations = self.translations.build()
+        _contents = self.contents.build()
+        _variations = self.variations.build()
+        _relations = self.relations.build()
         return OrderedDict([
             ("entry", _entry),
             ("translations", _translations),
@@ -160,7 +158,8 @@ class WordBuilder:
         result.tags = dic["tags"]
         result.contents.extend([Content(**cnt) for cnt in dic["contents"]])
         result.variations.extend([Variation(**var) for var in dic["variations"]])
-        result.relations.extend([Relation(**rel) for rel in dic["relations"]])
+        result.relations.extend([Relation(relation["title"], Entry(**relation["entry"]))
+                                 for relation in dic["relations"]])
         return result
 
     def delete_dollar(self):
@@ -168,6 +167,9 @@ class WordBuilder:
         sentence = self.translations[0].forms[0]
         self.translations[0].forms[0] = sentence.replace("$", "")
         return self
+
+    def __repr__(self):
+        return "<WordBuilder: {}>".format(self.entry)
 
 
 class WordBuilderForJapanese(WordBuilder):
@@ -223,7 +225,6 @@ class WordBuilderForJapanese(WordBuilder):
     def integrate_gloss(self):
         '''Integrate '大意' component with 'glossword' component.'''
         if "大意" in self.contents.keys():
-            # import pdb; pdb.set_trace()
             pre_gloss = self.contents.find("大意")[1].text
             if "glossword" in self.contents.keys():
                 glosses = self.contents.find("glossword")[1].text
@@ -258,8 +259,27 @@ class WordBuilderForJapanese(WordBuilder):
 Entry = namedtuple("Entry", "id form")
 Translation = namedtuple("Translation", "title forms")
 Content = namedtuple("Content", "title text")
-Relation = namedtuple("Relation", "title entry")
 Variation = namedtuple("Variation", "title form")
+
+class Relation:
+    '''mostly same with namedtuple,
+    except that ``_asdict`` method works well for Entry object.'''
+    def __init__(self, title, entry):
+        self._title = title
+        self._entry = entry
+
+    @property
+    def title(self):
+        return self._title
+
+    @property
+    def entry(self):
+        return self._entry
+
+    def _asdict(self):
+        return OrderedDict([('title', self.title),
+                            ('entry', self.entry._asdict())])
+
 
 class WordComponents(list):
     def __init__(self, component_type):
@@ -275,13 +295,11 @@ class WordComponents(list):
         return [component.title for component in self]
 
     def find(self, title):
-        generator = ((i, component)
-                     for i, component in enumerate(self)
+        generator = ((i, component) for i, component in enumerate(self)
                      if component.title == title)
         try:
             result = next(generator)
         except StopIteration:
-            # import pdb; pdb.set_trace()
             raise WordComponentsError("No component has the 'title'.")
         return result
 
@@ -297,6 +315,9 @@ class WordComponents(list):
                 i, component = self.find(title)
                 del self[i]
                 self[0:0] = [component]
+
+    def build(self):
+        return [component._asdict() for component in self]
 
 class ZpDICInfo:
     DEFAULT_ALPHABET_ORDER = ".'aAbBcCdDeEfFgGiIjJkKlLmMnNoOpPrRsStTuUvVxXyYzZ"
