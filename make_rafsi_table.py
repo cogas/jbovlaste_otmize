@@ -74,7 +74,7 @@ def sort_key(row):
     else:
         return word
 
-def make_rafsi_table(format="tsv"):
+def make_rafsi_table(format="csv"):
     if format == "tsv":
         delimiter = '\t'
     elif format == "csv":
@@ -88,7 +88,10 @@ def make_rafsi_table(format="tsv"):
                    for key, rafsis in rafsi_collector((en_dictionary,)).items()]
     rafsi_table = sorted(rafsi_table, key=sort_key)
     filename = 'rafsi_table/rafsi_table.' + format
-    with open(filename, "w", newline='', encoding='utf-8') as file:
+    with open(filename, "w", encoding='utf-8') as file:
         writer = csv.writer(file, delimiter=delimiter)
-        writer.writerows(rafsi_table)
+        for row in rafsi_table:
+            if len(row) < 4:
+                row.extend(['']*(4-len(row)))
+                writer.writerow(row)
         print("Written: {}.".format(filename))
