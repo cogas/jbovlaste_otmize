@@ -186472,18 +186472,18 @@
       ]
     }
   ],
-  "meta": {
-    "generated_date": "2016-12-13",
-    "lang": {
-      "from": "jbo",
-      "to": "jbo"
-    }
-  },
   "zpdic": {
     "alphabetOrder": ".'aAbBcCdDeEfFgGiIjJkKlLmMnNoOpPrRsStTuUvVxXyYzZ",
     "plainInformationTitles": [
       "username",
       "rafsi"
     ]
+  },
+  "meta": {
+    "generated_date": "2016-12-13",
+    "lang": {
+      "from": "jbo",
+      "to": "jbo"
+    }
   }
 }

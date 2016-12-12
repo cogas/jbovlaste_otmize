@@ -1,14 +1,16 @@
 # -*- coding: utf-8 -*-
 
-import sys, json, datetime, concurrent.futures, itertools, copy, re
+import sys, json, datetime, concurrent.futures,\
+       itertools, copy, re, argparse
 from time import time
+from multiprocessing import cpu_count
 from file_dealer import ZipDealer, RawdictDealer, JbovlasteXmlDealer
 from collections import OrderedDict, defaultdict
 from vlaste_builder import DictionaryBuilder, WordBuilder, Metadata,\
                            Entry, Translation, Content, Relation,\
                            WordBuilderForJapanese, ZpDICInfo
 
-LANG_LIST = ["en", "ja", "jbo", "eo", "en-simple", "de", "fr", "ru", "zh", "es"]
+LANG_LIST = ["en", "ja", "jbo", "en-simple"]
 
 def make_content(valsi, title_name):
     if title_name in ('keyword', 'glossword'):
@@ -94,38 +96,53 @@ def dictionary_customize(dictionary, nodollar, addrelations):
             word.delete_dollar()
 
     if addrelations:
-        print('add relations...')
-        start = time()
-        entry_list = [word.entry for word in dictionary.words]
-        letters = ".abcdefgijklmnoprstuvxyz"
-        letters += letters[1:].upper()
-        entries_for_dict_creation = copy.deepcopy(entry_list)
-        entry_dict = defaultdict(list)
-        for letter in letters:
-            for i, entry in enumerate(entries_for_dict_creation):
-                if entry.form[0] == letter:
-                    entry_dict[letter].append(entry)
-        new_word_list = []
-        max_task = len(dictionary.words)
-        '''
+        dictionary.words = relationized_words(dictionary)
+
+    return dictionary
+
+def relationized_words(dictionary):
+    print('add relations...')
+    start = time()
+    entry_list = [word.entry for word in dictionary.words]
+    letters = ".abcdefgijklmnoprstuvxyz"
+    letters += letters[1:].upper()
+    entries_for_dict_creation = copy.deepcopy(entry_list)
+    entry_dict = defaultdict(list)
+    for letter in letters:
+        for i, entry in enumerate(entries_for_dict_creation):
+            if entry.form[0] == letter:
+                entry_dict[letter].append(entry)
+    new_word_list = []
+    max_task = len(dictionary.words)
+    if max_task >= 6000:
+        message = "\r{}/{} * {} words done, using {} processes."
+        cpu = cpu_count()
         futures = set()
-        with concurrent.futures.ProcessPoolExecutor() as executor:
-            for word in dictionary.words:
-                # _entry_dict = copy.deepcopy(entry_dict)
-                future = executor.submit(worker, word, entry_dict)
+        list_size = max_task // (cpu*1)
+        done_task = 0
+        split_words = [dictionary.words[x:x+list_size] for x in range(0, max_task, list_size)]
+        task_block = len(split_words)
+        with concurrent.futures.ProcessPoolExecutor(max_workers=cpu) as executor:
+            sys.stdout.write(message.format(0, task_block, max_task, cpu))
+            sys.stdout.flush()
+            for words in split_words:
+                future = executor.submit(worker_for_plural, words, entry_dict)
                 futures.add(future)
-        for future in concurrent.futures.as_completed(futures):
-        '''
+            for future in concurrent.futures.as_completed(futures):
+                new_word_list.extend(future.result())
+                done_task += 1
+                sys.stdout.write(message.format(done_task, task_block, max_task, cpu))
+                sys.stdout.flush()
+    else:
         for word in dictionary.words:
             future = worker(word, entry_dict)
             new_word_list.append(future)
             done_task = len(new_word_list)
-            sys.stdout.write("\r{}/{} words done.".format(done_task, max_task))
+            sys.stdout.write("\r{}/{} words done, using 1 process.".format(done_task, max_task))
             sys.stdout.flush()
-        end = time()
-        print(" ({:.1f} sec.)".format(end-start))
-    dictionary.words = new_word_list
-    return dictionary
+    end = time()
+    print(" ({:.1f} sec.)".format(end-start))
+    return new_word_list
 
 def worker(word, entry_dict):
     '''r"{[a-zA-Z']}" に該当する単語のうち、エントリーのあるものだけを relations に加える。
@@ -144,9 +161,13 @@ def worker(word, entry_dict):
                 break
     return word
 
-# -------------------------
+def worker_for_plural(words, entry_dict):
+    result = []
+    for word in words:
+        result.append(worker(word, entry_dict))
+    return result
 
-import argparse
+# -------------------------
 
 def handle_commandline():
     parser = argparse.ArgumentParser()
@@ -172,7 +193,7 @@ if __name__ == '__main__':
         filename = filename_temp.format(lang)
         dictionary = create_dictionary(lang, nodollar, addrelations)
         dictionary.save(filename)
-
+        print()
     if zippy:
         zipdealer = ZipDealer(langs)
         zipdealer.zippy()

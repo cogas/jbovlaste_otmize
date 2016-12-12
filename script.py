@@ -2,8 +2,6 @@
 from vlaste_builder import DictionaryBuilder
 from vlaste_manager import DictionaryManager
 from file_dealer import OTMizedJsonDealer
-from collections import defaultdict
-import csv, re
 from pprint import pprint
 
 jbo_dealer = OTMizedJsonDealer("jbo")
