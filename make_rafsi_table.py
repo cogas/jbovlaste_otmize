@@ -88,8 +88,10 @@ def make_rafsi_table(format="csv"):
                    for key, rafsis in rafsi_collector((en_dictionary,)).items()]
     rafsi_table = sorted(rafsi_table, key=sort_key)
     filename = 'rafsi_table/rafsi_table.' + format
-    with open(filename, "w", encoding='utf-8') as file:
+    with open(filename, "w", newline='', encoding='utf-8') as file:
+        header = ["valsi", "rafsi_1", "rafsi_2", "rafsi_3"]
         writer = csv.writer(file, delimiter=delimiter)
+        writer.writerow(header)
         for row in rafsi_table:
             if len(row) < 4:
                 row.extend(['']*(4-len(row)))
