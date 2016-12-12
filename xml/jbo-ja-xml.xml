@@ -20,8 +20,8 @@
   <definition>謹聴／注目 （a&apos;a 謹聴／注目 - a&apos;acu&apos;i 無頓着／無愛想 - a&apos;anai 忌避）</definition>
   <definitionid>42011</definitionid>
   <notes>心態詞； 丁寧に扱う／対応する気持； 警戒を表す a&apos;e や用心を表す o&apos;i と異なる「.a&apos;a do .io na citka lo rectu／肉は召し上がらないのですね」「.a&apos;a .i ko di&apos;a co&apos;e .i ba ku ma fasnu／なるほど、それで、その後どうなったの？」 ・読み方： アハ  ・関連語： {jundi}, {re&apos;i}</notes>
-  <glossword word="注目" />
   <glossword word="謹聴" />
+  <glossword word="注目" />
 </valsi>
 <valsi word="a'acu'i" type="cmavo-compound">
   <selmaho>UI*1</selmaho>
@@ -32,8 +32,8 @@
   <definition>無頓着／無愛想 （ a&apos;a 謹聴／注目 - a&apos;acu&apos;i 無頓着／無愛想 - a&apos;anai 忌避）</definition>
   <definitionid>42012</definitionid>
   <notes>心態詞； 懇ろさを欠いた気持； 気に留めない情況「zo&apos;e .a&apos;acu&apos;i pu ca&apos;o klama／誰だか気に留めなかったが、来ていた人はいた」「.a&apos;a cu&apos;i ko denpa lo nu mi mulgau ti／ちょっとこれ終わるまで待ってて」 ・読み方： アハシュヒ ・関連語： {nalju&apos;i}, {re&apos;i} {nai}</notes>
-  <glossword word="無頓着" />
   <glossword word="無愛想" />
+  <glossword word="無頓着" />
 </valsi>
 <valsi word="a'anai" type="cmavo-compound">
   <selmaho>UI*1</selmaho>
@@ -200,8 +200,8 @@
   <definition>関心 （ a&apos;u 関心 - a&apos;ucu&apos;i 無関心 - a&apos;unai 反感）</definition>
   <definitionid>15794</definitionid>
   <notes>心態詞； それに好奇心を覚えて惹きつけられる気持「a&apos;u ta mo／わぁ、なぁにそれ？」「.a&apos;u ma ba&apos;o se lifri do／どんなことがあったの？」 ・読み方： アフ  ・関連語： {selci&apos;i}, {kurji}</notes>
-  <glossword word="関心" />
   <glossword word="興味" />
+  <glossword word="関心" />
 </valsi>
 <valsi word="a'ucu'i" type="cmavo-compound">
   <selmaho>UI*1</selmaho>
@@ -445,10 +445,10 @@
   <definition>$x_1$ は $x_2$ （構造体）のバルコニー／さじき／ベランダ／張り出し</definition>
   <definitionid>39245</definitionid>
   <notes>「la juliet. bu&apos;u lo balni cu tavla la noi bartu romeon.／ジュリエットがバルコニーから外のロミオに語りかける」 ・大意： バルコニー ・読み方： バルゥニ  ・語呂合わせ： balcon ・関連語： {kajna}</notes>
-  <glossword word="張り出し" sense="構造" />
-  <glossword word="桟敷" sense="劇場" />
   <glossword word="バルコニー" />
+  <glossword word="張り出し" sense="構造" />
   <glossword word="ベランダ" />
+  <glossword word="桟敷" sense="劇場" />
 </valsi>
 <valsi word="balre" type="gismu">
   <rafsi>ba&apos;e</rafsi>
@@ -516,9 +516,10 @@
     <username>glekizmiku</username>
     <realname>la gleki noi jmina lo ponjo smuni</realname>
   </user>
-  <definition>$x_1$ は $x_2$ （種類）の両性綱／両生類動物</definition>
+  <definition>$x_1$ は $x_2$ （種類）の両生綱／両生類動物</definition>
   <definitionid>39249</definitionid>
   <notes>「so&apos;o se banfi jai za&apos;o na cirko lo fipfepri lo nu makcu binxo／ある種の両生類は成熟しても鰓を失わない」 ・大意： 両生類 ・読み方： バンフィ ・語呂合わせ： anfibio ・関連語： {danlu}, {respa}</notes>
+  <glossword word="両生類" />
 </valsi>
 <valsi word="bangu" type="gismu">
   <rafsi>ban</rafsi>
@@ -765,9 +766,9 @@
   <definition>的確 （ ba&apos;u 誇張 - ba&apos;ucu&apos;i 的確 - ba&apos;unai 控えめ）</definition>
   <definitionid>66178</definitionid>
   <notes>心態詞「lo finpe zo&apos;u ba&apos;ucu&apos;i lo ka clani pu me lo birka si&apos;e ／魚はちょうど腕の長さほどあった。」 ・読み方： バフシュヒ ・関連語： {satci}</notes>
-  <glossword word="的確" sense="ぴったりの量" />
   <glossword word="ちょうど" sense="ぴったりの量" />
   <glossword word="まさに" sense="ぴったりの量" />
+  <glossword word="的確" sense="ぴったりの量" />
 </valsi>
 <valsi word="ba'unai" type="cmavo-compound">
   <selmaho>UI*3</selmaho>
@@ -788,8 +789,8 @@
   <definition>$x_1$ は $x_2$ （品種）のオオムギ粒</definition>
   <definitionid>39262</definitionid>
   <notes>・大意： 大麦 ・読み方： バヴミ  ・語呂合わせ： ＜場でヴォミット＞, mai（麦）, barley ・関連語： {gurni}</notes>
-  <glossword word="大麦" sense="穀粒" />
   <glossword word="オオムギ" sense="穀粒" />
+  <glossword word="大麦" sense="穀粒" />
   <keyword word="オオムギ" place="1" sense="穀粒" />
 </valsi>
 <valsi word="bavmyckafi" type="lujvo">
@@ -1384,9 +1385,9 @@
   <definition>$x_1$ は材質 $x_2$ のシート状のもの；3次元空間内の、ほぼ2次元の柔軟な物体；枚</definition>
   <definitionid>39295</definitionid>
   <notes>的確な日本語訳は存在しない。「枚」で数えられる形状のもの。「紙」「箔」「敷物」「毛布」「アルミホイル」「サランラップ」などの上位概念。 ・大意： シーツ ・読み方： ボクゥフォ  ・語呂合わせ： ＜坊主の不法＞, bo(箔), foil ・関連語： {plita}, {cinje}, {polje}, {slasi}, {tinci}</notes>
-  <glossword word="枚" />
   <glossword word="シート" />
   <glossword word="シーツ" />
+  <glossword word="枚" />
 </valsi>
 <valsi word="boxna" type="gismu">
   <rafsi>bon</rafsi>
@@ -1769,9 +1770,9 @@
   <definition>$d_1=c_1$は基準$d_3$において$c_2$と同日</definition>
   <definitionid>38565</definitionid>
   <notes>;$d_1=c_1$は今日/本日 (英語定義から和訳)</notes>
-  <glossword word="今日" />
-  <glossword word="本日" />
   <glossword word="同日" />
+  <glossword word="本日" />
+  <glossword word="今日" />
 </valsi>
 <valsi word="cabna" type="gismu">
   <rafsi>cab</rafsi>
@@ -2740,8 +2741,8 @@
   <definitionid>40398</definitionid>
   <notes>x3は「受験者」や「製品」など。 ・大意： 試験 ・読み方： シプラ  ・関連語： {ciksi}, {troci}, {jarco}, {pajni}, {saske}</notes>
   <glossword word="テスト" />
-  <glossword word="試験" />
   <glossword word="実験" />
+  <glossword word="試験" />
 </valsi>
 <valsi word="cirko" type="gismu">
   <rafsi>cri</rafsi>
@@ -3818,9 +3819,9 @@
   <definition>$x_1$ は $x_2$ （足／ひづめ）を覆う／守るための $x_3$ （素材）の靴</definition>
   <definitionid>40402</definitionid>
   <notes>「ブーツ (={tupcutci})」「サンダル」「下駄」「草履」も。 ・大意： 靴 ・読み方： シュチ ・語呂合わせ： シュー小さい ・関連語： {smoka}, {taxfu}, {skiji}</notes>
+  <glossword word="サンダル" />
   <glossword word="靴" />
   <glossword word="ブーツ" />
-  <glossword word="サンダル" />
 </valsi>
 <valsi word="cutne" type="gismu">
   <rafsi>cut</rafsi>
@@ -3958,9 +3959,9 @@
   <definition>非現実 （ da&apos;i 非現実 - da&apos;inai 現実）</definition>
   <definitionid>66182</definitionid>
   <notes>心態詞（談話系）； 「もし~なら」「仮に～」「da&apos;i trina lo nalglico selbangu／仮に非英語話者を惹きつけられたら」「lonu da&apos;i la betis. klama le te salci cu vajni lenu la bil. gleki／ビルが喜ぶには、ベティがパーティに来ることが重要だった（実際には来なかった）」「lo li&apos;i pu da&apos;i lifri／既視体験」 ・読み方： ダヒ ・関連語： {xanri}; {da&apos;inai}</notes>
-  <glossword word="仮に" sense="非現実" />
   <glossword word="もし" sense="非現実" />
   <glossword word="なら" sense="非現実" />
+  <glossword word="仮に" sense="非現実" />
 </valsi>
 <valsi word="da'inai" type="cmavo-compound">
   <selmaho>UI*3</selmaho>
@@ -4198,10 +4199,10 @@
   <definition>$l_1$は$l_2$(物)を$l_3=d_1$(ポケット) ・$d_2$(付随)から盗む／奪う／スリをする／ひったくる</definition>
   <definitionid>39187</definitionid>
   <notes>d_2はポケットのついてある物として『ズボン』や『カバン』など ;l_1はひったくり犯／スリ犯</notes>
-  <glossword word="強奪する" sense="物品" />
+  <glossword word="奪う" sense="物品" />
   <glossword word="ひったくる" sense="物品" />
   <glossword word="スリをする" sense="物品" />
-  <glossword word="奪う" sense="物品" />
+  <glossword word="強奪する" sense="物品" />
   <glossword word="盗む" sense="物品" />
 </valsi>
 <valsi word="dasni" type="gismu">
@@ -4496,12 +4497,12 @@
   <definition>日付 [日、週、月、年] $x_1=d_1=k_1$ は、 最初の事象 $x_2=d_2$ の日付 [日、週、月、年] の繰り返し／再来、 $x_3=k_3$回目の、 $x_4$ （体系）における。</definition>
   <definitionid>57279</definitionid>
   <notes>{detri} zei {krefu}。 krefu_2 は最初の事象の日付に対応するが、簡単のため、その場所をテルブリに含めていない。 $x_4$ で繰り返しのシステムを表せる：週／月の中の日；年の中の日／月；世紀の中の年など。 例） li renopavo pi&apos;e pano pi&apos;e re detke&apos;u lo nu la gandis noi banli cu jbena kei li pavomu lo pa nanca be fi la gregoris （グレゴリオ暦の年で数えると、2014年10月2日はマハトマ・ガンディーの145回目の誕生日だ。）／ li pasoxaso detke&apos;u lo nu la gandis noi banli cu jbena kei li pa zo&apos;e loi panono nanca be fi la gregoris （グレゴリオ暦の世紀で数えると、1969年はマハトマ・ガンディーの生誕100周年だ。）／ li reci detke&apos;u lo nu lo mamymamta cu mrobi&apos;o kei zo&apos;e lo pa masti be fi la gregoris （グレゴリオ暦の月で数えると、23日は祖母の月命日だ。）／ lo vondei cu detke&apos;u tu&apos;a lo festi zo&apos;e lo jeftu be fi la gregoris （グレゴリオ暦の曜日で数えると、この町の木曜日はゴミの日だ。）／ la pendo lacpu cu detke&apos;u lo nu lo morsi jelgau stuzi cu cando kei zi&apos;o lo ponjo ke xamei jeftu （日本の六曜で友引は日本の火葬場が休みの日だ。）</notes>
+  <glossword word="命日" sense="同じ日付の再来" />
+  <glossword word="周年" sense="同じ日付の再来" />
+  <glossword word="周忌" sense="同じ日付の再来" />
+  <glossword word="回忌" sense="同じ日付の再来" />
   <glossword word="記念日" sense="同じ日付の再来" />
   <glossword word="誕生日" sense="同じ日付の再来" />
-  <glossword word="回忌" sense="同じ日付の再来" />
-  <glossword word="命日" sense="同じ日付の再来" />
-  <glossword word="周忌" sense="同じ日付の再来" />
-  <glossword word="周年" sense="同じ日付の再来" />
 </valsi>
 <valsi word="detri" type="gismu">
   <rafsi>det</rafsi>
@@ -4722,8 +4723,8 @@
   <definition>$x_1$ はラドン (Rn)</definition>
   <definitionid>42255</definitionid>
   <notes>{dirce} {navni}; {ratni}</notes>
-  <glossword word="ラドン" />
   <glossword word="Rn" sense="ラドン" />
+  <glossword word="ラドン" />
   <keyword word="ラドン" place="1" />
 </valsi>
 <valsi word="dirgo" type="gismu">
@@ -4854,8 +4855,8 @@
   <definitionid>66184</definitionid>
   <notes>心態詞（談話系）；「鷹揚に言えば」「広い意味では」「せいぜい」「大目に見れば」 「ti claxu lo stizu gi&apos;e do&apos;a relxilma&apos;e／これ、サドルが無いけど、まあ自転車と呼んで良いだろう」 「i .y. do&apos;a milxe plika&apos;e／大目に見ればかろうじて使用可能」 ・読み方： ドハ ・関連語： {dunda}</notes>
   <glossword word="寛大" sense="広義" />
-  <glossword word="大目に見れば" sense="広義" />
   <glossword word="せいぜい" sense="大目に見ても" />
+  <glossword word="大目に見れば" sense="広義" />
 </valsi>
 <valsi word="do'anai" type="cmavo-compound">
   <selmaho>UI*3</selmaho>
@@ -4866,8 +4867,8 @@
   <definition>狭義 （ do&apos;a 広義 - do&apos;anai 狭義）</definition>
   <definitionid>66185</definitionid>
   <notes>心態詞（談話系）； 「けちな言い方をすれば」「狭い意味では」「少なくとも」「ti claxu lo jabre gi&apos;e do&apos;anai na relxilma&apos;e／これ、ブレーキが無いぞ、こんなの自転車とは言えない」 「i ku&apos;i so&apos;e skami pilno cu milxe do&apos;anai ke glico se bangu／コンピュータ・ユーザのほとんどは、少なくとも多少の英語ができる」 ・読み方： ドハナイ</notes>
-  <glossword word="少なくとも" sense="狭義でも" />
   <glossword word="狭い意味では" />
+  <glossword word="少なくとも" sense="狭義でも" />
 </valsi>
 <valsi word="do'e" type="cmavo">
   <selmaho>BAI</selmaho>
@@ -5559,8 +5560,8 @@
   <definition>$c_1$は $c_2=f_2$(原題／原典)を $c_3=f_1$(翻訳者)が $f_3$(原語)から $f_4$(翻訳先言語)へ翻訳した本／翻訳書／訳書</definition>
   <definitionid>39132</definitionid>
   <notes>f5,c4,c5は消去した</notes>
-  <glossword word="訳書" />
   <glossword word="翻訳書" />
+  <glossword word="訳書" />
   <glossword word="訳本" />
 </valsi>
 <valsi word="fanza" type="gismu">
@@ -5701,9 +5702,9 @@
   <definition>ごめんなさい</definition>
   <definitionid>42506</definitionid>
   <notes>{fraxu}, {u&apos;u}</notes>
-  <glossword word="許して" />
   <glossword word="ごめんなさい" sense="許しを請う" />
   <glossword word="ごめん" sense="許しを請う" />
+  <glossword word="許して" />
 </valsi>
 <valsi word="fe" type="cmavo">
   <selmaho>FA</selmaho>
@@ -5733,8 +5734,8 @@
   <definition>$x_1=j_1$ は $x_2=j_2$ （完成品）を $x_3=f_1$ （液体）・ $x_4=f_2$ （温度）・ $x_5=f_3$ （圧力）で料理する。</definition>
   <definitionid>64143</definitionid>
   <notes>・関連語：{febvi}, {jukpa}, {sudglajukpa}</notes>
-  <glossword word="炊く" sense="料理" />
   <glossword word="煮る" sense="料理" />
+  <glossword word="炊く" sense="料理" />
   <keyword word="料理する者" place="1" />
   <keyword word="作られる料理" place="2" />
   <keyword word="調理で用いる液体" place="3" />
@@ -6872,8 +6873,8 @@
   <definition>不特定の感情／態度</definition>
   <definitionid>42070</definitionid>
   <notes>心態詞 ・読み方： ゲヘ</notes>
-  <glossword word="不特定の態度" />
   <glossword word="不特定の感情" />
+  <glossword word="不特定の態度" />
 </valsi>
 <valsi word="gei" type="cmavo">
   <selmaho>VUhU2</selmaho>
@@ -7148,14 +7149,14 @@
   <definition>$x_1$ は売春行為をする、 $x_2$ に対して、 $x_3$ の対価で</definition>
   <definitionid>18469</definitionid>
   <notes>関連語：{gletu}, {vecnu}, {vibna}, {pinji}, {xangle}, {molgle}, {gaxygle}</notes>
-  <glossword word="ばいしゅん" sense="売春" />
-  <glossword word="娼婦" />
   <glossword word="男娼" />
-  <glossword word="売春" />
-  <glossword word="ばいしゅんふ" sense="売春婦" />
-  <glossword word="だんしょう" sense="男娼" />
   <glossword word="しょうふ" sense="娼婦" />
+  <glossword word="だんしょう" sense="男娼" />
+  <glossword word="ばいしゅん" sense="売春" />
+  <glossword word="ばいしゅんふ" sense="売春婦" />
+  <glossword word="売春" />
   <glossword word="売春婦" />
+  <glossword word="娼婦" />
   <keyword word="売春婦・男娼" place="1" />
   <keyword word="買春者" place="2" />
   <keyword word="売春・買春の代償・値段" place="3" />
@@ -7745,9 +7746,9 @@
   <definitionid>15796</definitionid>
   <notes>心態詞； それの良さを認めて支持／擁護する気持； 良さを内面的に味わう i&apos;o と異なる「いいねぇ」「いけー！（応援）」「そうだそうだ（擁護）」「.i&apos;e do xautce gunka／素晴らしい、本当によくやった」 ・読み方： イヘ  ・関連語： {zanru}</notes>
   <glossword word="是認" />
+  <glossword word="承認" />
   <glossword word="喝采" />
   <glossword word="認める" />
-  <glossword word="承認" />
 </valsi>
 <valsi word="i'ecu'i" type="cmavo-compound">
   <selmaho>UI*1</selmaho>
@@ -7969,9 +7970,9 @@
   <definition>愛好 （ iu 愛好 - iunai 憎悪）</definition>
   <definitionid>15798</definitionid>
   <notes>心態詞； それにたいする愛好が充溢している情況； 愛する気持 「.iu do melbi／綺麗だよ、ハニー」 ・読み方： ユ ・関連語： {prami}, {pendo}</notes>
-  <glossword word="好む" />
-  <glossword word="愛好" />
   <glossword word="愛情" />
+  <glossword word="愛好" />
+  <glossword word="好む" />
 </valsi>
 <valsi word="i'u" type="cmavo">
   <selmaho>UI1</selmaho>
@@ -7992,8 +7993,8 @@
   <definition>$x_1$ は $x_2$ （者）にとって $x_3$ （性質）な点で可愛い／カワイイ</definition>
   <definitionid>63691</definitionid>
   <notes>iu + melbi から。 ・関連語：{melbi}, {iu}, {citmle}, {cinmle}</notes>
-  <glossword word="可愛い" />
   <glossword word="カワイイ" />
+  <glossword word="可愛い" />
 </valsi>
 <valsi word="iunai" type="cmavo-compound">
   <selmaho>UI*1</selmaho>
@@ -8075,8 +8076,8 @@
   <definition>$x_1=p_1$ は手順 $x_2=p_3$ に従って使われる油性ペン／マーカー</definition>
   <definitionid>41852</definitionid>
   <notes>{djacu} {renvi} {penbi}</notes>
-  <glossword word="マーカー" sense="ペン" />
   <glossword word="油性ペン" />
+  <glossword word="マーカー" sense="ペン" />
 </valsi>
 <valsi word="jadni" type="gismu">
   <rafsi>jad</rafsi>
@@ -8249,8 +8250,8 @@
   <definitionid>42091</definitionid>
   <notes>心態詞（認識系）；論理・法則・体系に照らし合わせて必然的 「つまり」「要するに」「したがって」「za&apos;a carvi cladu .i ja&apos;o carvi carmi／雨音がうるさいな。つまり雨が激しいということだ」 ・読み方： ジャホ  ・関連語： {selni&apos;i}, {ni&apos;ikri}</notes>
   <glossword word="したがって" />
-  <glossword word="要するに" />
   <glossword word="つまり" />
+  <glossword word="要するに" />
 </valsi>
 <valsi word="jarbu" type="gismu">
   <user>
@@ -8460,8 +8461,8 @@
   <definition>量 $x_{1}$ は商品 $x_{2}$ の、買い手 $x_{3}$ に対して売り手 $x_{4}$ が設定した価格／値段</definition>
   <definitionid>39633</definitionid>
   <notes>$x_{2}$ は物や事象、性質など。 商品の所有権という概念から、 $x_{1}$ として「所有権の価格」、 $x_{2}$ として「所有権が移る商品」という sumti を引き出す（意味論的により厳密に言うなら {posydi&apos;a}, {posyseldi&apos;a}）。 jdima の価格 $x_{1}$ は売り手 $x_{4}$ が決めるのに対して、 {friti} の条件 $x_{4}$ は受け取る者が決めても良い。 jdima の価格 $x_{1}$ は、実際の取引価格・費用に等しいとは限らない。 実際の取引価格・費用は {vecnu} の $x_{4}$ や {canja} の $x_{2}$, $x_{3}$ に相当する。 またこれらの概念は、価値を表す {vamji} とは直接関係ない。 ・大意： 価格 ・読み方： ジディマ  ・関連語： {canja}, {friti}, {janta}, {jdini}, {kargu}, {pleji}, {dapma}; 「価値」は {vamji}; 実際の取引価格・費用は ve {vecnu}; {canja}, {fepni}, {jerna}, {jinga}, {prali}, {rupnu}, {sfasa}, {vamji}</notes>
-  <glossword word="値段" />
   <glossword word="価格" />
+  <glossword word="値段" />
 </valsi>
 <valsi word="jdini" type="gismu">
   <rafsi>din</rafsi>
@@ -8768,10 +8769,10 @@
   <definition>真実 （ je&apos;u 真実 - je&apos;unai 虚偽）</definition>
   <definitionid>66186</definitionid>
   <notes>心態詞（談話系）「je&apos;u pei／まじで？」「je&apos;u zukte tu&apos;a lo nabmi se bilga .i po&apos;o pu nai ca sanji lo si&apos;o bevri ri ti／本当に宿題やりました。持ってくるのを忘れただけです。」「.ue mi pu krici lo du&apos;u do se bloti lo je&apos;u te falnu／えっ、あなたが乗ってきたボートが本当に帆で動いていると思い込んでいたよ」 ・読み方： ジェフ ・関連語：{jetnu}; {da&apos;inai}</notes>
-  <glossword word="まさに" sense="虚偽でない" />
-  <glossword word="事実" sense="虚偽でない" />
-  <glossword word="真実" sense="嘘ではない" />
   <glossword word="本当" sense="虚偽でない" />
+  <glossword word="事実" sense="虚偽でない" />
+  <glossword word="まさに" sense="虚偽でない" />
+  <glossword word="真実" sense="嘘ではない" />
 </valsi>
 <valsi word="je'unai" type="cmavo-compound">
   <selmaho>UI*3</selmaho>
@@ -8782,9 +8783,9 @@
   <definition>虚偽 （ je&apos;u 真実 - je&apos;unai 虚偽）</definition>
   <definitionid>66187</definitionid>
   <notes>心態詞（談話系）「mi terpa lo cidjrmanju .i ca terpa lo glare tcati je&apos;unai／まんじゅう怖い。今は濃いお茶が怖い（嘘）。」 いわゆる（真実はそうではない）「le je&apos;unai palci cu xanri le menli poi na jimpe le manku sevzi／いわゆる悪というのは、暗黒の自己を理解できない心が見る幻だ」 ・読み方： ジェフナイ ・関連語： {jitfa}; {da&apos;i}</notes>
-  <glossword word="虚偽" sense="真実ではない" />
-  <glossword word="いわゆる" sense="真実ではない" />
   <glossword word="嘘" sense="真実ではない" />
+  <glossword word="いわゆる" sense="真実ではない" />
+  <glossword word="虚偽" sense="真実ではない" />
 </valsi>
 <valsi word="jgalu" type="gismu">
   <rafsi>ja&apos;u</rafsi>
@@ -9174,8 +9175,8 @@
   <definition>$x_1$ は白金 （platinum; Pt）</definition>
   <definitionid>64218</definitionid>
   <notes>・関連語： {jinme}, {solji}</notes>
-  <glossword word="Pt" sense="元素" />
   <glossword word="白金" />
+  <glossword word="Pt" sense="元素" />
   <keyword word="白金" place="1" />
 </valsi>
 <valsi word="jinmrtitani" type="fu'ivla">
@@ -9186,8 +9187,8 @@
   <definition>$x_1$ はチタン （titanium; Ti）</definition>
   <definitionid>64219</definitionid>
   <notes>・関連語： {jinme}</notes>
-  <glossword word="Ti" sense="元素" />
   <glossword word="チタン" />
+  <glossword word="Ti" sense="元素" />
   <keyword word="チタン" place="1" />
 </valsi>
 <valsi word="jinmrxafni" type="fu'ivla">
@@ -9198,8 +9199,8 @@
   <definition>$x_1$ はハフニウム （hafnium; Hf ）</definition>
   <definitionid>64220</definitionid>
   <notes>・関連語： {jinme}</notes>
-  <glossword word="ハフニウム" />
   <glossword word="Hf" sense="元素" />
+  <glossword word="ハフニウム" />
   <keyword word="ハフニウム" place="1" />
 </valsi>
 <valsi word="jinru" type="gismu">
@@ -9241,8 +9242,8 @@
   <definition>$x_1$ は $x_2$ （命題）・ $x_3$ （題目）を、 $x_4$ （根拠）により真であると考える；  $x_1$ は $x_2$ だと思う</definition>
   <definitionid>40559</definitionid>
   <notes>・大意： 考える ・読み方： ジンヴィ  ・関連語： {pe&apos;i}, {ciksi}, {jijnu}, {nabmi}, {pensi}, {senpi}, {sidbo}, {birti}, {pinka}</notes>
-  <glossword word="考える" />
   <glossword word="思う" />
+  <glossword word="考える" />
 </valsi>
 <valsi word="jinzi" type="gismu">
   <rafsi>jiz</rafsi>
@@ -9302,8 +9303,8 @@
   <definitionid>42437</definitionid>
   <notes>$x_2=j_2$ は塩 (= {silna})・酢 (= {slami})・アルコール (= {xalka})・砂糖 (= {sakta})・蜂蜜 (= {bicysakta})・醤油 (= {sobysanso})・味噌 (= {furso&apos;epesxu})・麹 (= {mledi} {pesxu}) など。 {jinru} {vitno} {cidja}, {slamystogau}.</notes>
   <glossword word="ピクルス" />
-  <glossword word="なれずし" />
   <glossword word="漬物" />
+  <glossword word="なれずし" />
 </valsi>
 <valsi word="jisra" type="gismu">
   <user>
@@ -9323,8 +9324,8 @@
   <definition>$x_1$ （命題）は $x_2$ （認識体系）において偽／虚構／非真実／うそ</definition>
   <definitionid>39678</definitionid>
   <notes>・大意： 偽（ぎ） ・読み方： ジトファ  ・語呂合わせ： 偽のジト目ファン ・関連語： {je&apos;unai}, {fatci}, {stace}, {jetnu}, {cfika}</notes>
-  <glossword word="虚構" sense="真ではない" />
   <glossword word="嘘" sense="真ではない" />
+  <glossword word="虚構" sense="真ではない" />
   <keyword word="偽" place="1" sense="真ではない" />
 </valsi>
 <valsi word="jitro" type="gismu">
@@ -9428,8 +9429,8 @@
   <definition>メタ言語肯定</definition>
   <definitionid>66191</definitionid>
   <notes>心態詞（談話系）； 命題に影響を与えずに肯定を表す「ti se citka e&apos;a pei --- e&apos;a jo&apos;a／これ食べていいですか？--- いいですとも。」「ti kukte jo&apos;a／これはたしかにおいしい。」 ・読み方： ジョハ ・関連語： {drani}</notes>
-  <glossword word="正しい" sense="メタ言語肯定" />
   <glossword word="そのとおり" sense="メタ言語肯定" />
+  <glossword word="正しい" sense="メタ言語肯定" />
 </valsi>
 <valsi unofficial="true" word="jo'au" type="experimental cmavo">
   <selmaho>COI3</selmaho>
@@ -9440,8 +9441,8 @@
   <definition>パーサのバージョン／方言を変更する</definition>
   <definitionid>64133</definitionid>
   <notes>{do&apos;u} が省略可能な終端詞。 {jo&apos;au} に続く cmevla/sumti/selbri の語形と文法は lojban.org サイト内のページ ``BPFK Section: PEG Morphology Algorithm&apos;&apos; のバージョン 134 と、 公式文法に従っていなければならない。 例えば ``jo&apos;au jie bu&apos;&apos; や ``jo&apos;au xy xi xei&apos;&apos; は意味のある句ではない。 標準的な用法では全文章の最初に {jo&apos;au} 句を使う。 {fa&apos;o} の使い方と反対である。 {jo&apos;au} 句の意味は後ろに係り、その範囲は次の {jo&apos;au} 句が現れるまでの部分である。 最初の {jo&apos;au} 句が文章の途中に出てくる場合は、 その意味は文章の最初から次の {jo&apos;au} 句が現れるまでの部分に係る。 意味のある例: jo&apos;au cylyly xi papipa (公式yaccとjbofi&apos;e http://www.lojban.org/jboski/ ) ; jo&apos;au camxes (現行 peg http://camxes.lojban.org/ ) ; jo&apos;au iocixes (xorxes の zasni gerna https://skami2.iocikun.jp/lojban/zasniGerna , http://www.lojban.org/tiki/zasni+gerna ) ; jo&apos;au zantufa xi nopipapa (zantufa第0.11版 http://guskant.github.io/gerna_cipra/zantufa-0.11.html ) ; jo&apos;au ilmentufa xi renopavopi&apos;epapapi&apos;erevo (ilmentufa の 2014-11-24 版 http://mw.lojban.org/extensions/ilmentufa/camxes-exp.html , https://github.com/Ilmen-vodhr/ilmentufa ) ; jo&apos;au fancylojban (fancylojban http://mw.lojban.org/lmw/fancylojban , http://mw.lojban.org/lmw/ce_ki_tau_jau )</notes>
-  <glossword word="ロジバン パーサ の 方言" />
   <glossword word="ロジバン パーサ の バージョン" />
+  <glossword word="ロジバン パーサ の 方言" />
 </valsi>
 <valsi word="jo'e" type="cmavo">
   <rafsi>jom</rafsi>
@@ -9730,8 +9731,8 @@
   <definition>不確信 （ ju&apos;o 確信 - ju&apos;ocu&apos;i 不確信 - ju&apos;onai 不可能）</definition>
   <definitionid>42094</definitionid>
   <notes>心態詞（修飾系）； それについて定かなところはわからない／確信できない「ju&apos;ocu&apos;i mi ga ca&apos;o litru ginai ka&apos;e te pemrxaiku／私は旅に出てゐなければ句は出来ないのかも知れない」（山頭火『行乞記（二）』） ・読み方： ジュホシュヒ</notes>
-  <glossword word="わからない" />
   <glossword word="不確信" />
+  <glossword word="わからない" />
   <glossword word="かもしれない" />
 </valsi>
 <valsi word="ju'onai" type="cmavo-compound">
@@ -9743,8 +9744,8 @@
   <definition>不可能 （ ju&apos;o 確信 - ju&apos;ocu&apos;i 不確信 - ju&apos;onai 不可能）</definition>
   <definitionid>42095</definitionid>
   <notes>心態詞（修飾系）； それについて不可能であると確信する 「ありえない」 ・読み方： ジュホナイ</notes>
-  <glossword word="不可能" />
   <glossword word="ありえない" />
+  <glossword word="不可能" />
 </valsi>
 <valsi word="jurme" type="gismu">
   <rafsi>jum</rafsi>
@@ -10247,8 +10248,8 @@
   <definition>間接疑問</definition>
   <definitionid>66192</definitionid>
   <notes>心態詞（談話系）； 質問を表す語の直後に付き、その回答を表す。間接疑問の対象；「djuno lo du&apos;u ma kau daspo ti／誰がこれを壊したのかを知っている」 「mi na djuno lo du&apos;u ti mo kau／これが[何であるか／どうなのか／何をしているのか]、私は知らない」 「.e&apos;o ko no da jungau lo du&apos;u mi zvati ma kau／私がどこにいるか誰にも教えないでください」 「loi bangu cu ficysi&apos;u lo ka xo kau da jicmu valsi lo skari ce&apos;u／基本的な色を表す単語がいくつあるかは言語によって異なる」 「.ei do jdice lo du&apos;u xu kau do djica lo nu klama／あなたが行きたいかどうかは、あなたが決めることだ」 ・読み方： カウ</notes>
-  <glossword word="かどうか" sense="間接疑問" />
   <glossword word="か" sense="間接疑問" />
+  <glossword word="かどうか" sense="間接疑問" />
 </valsi>
 <valsi word="ka'u" type="cmavo">
   <selmaho>UI2</selmaho>
@@ -10259,8 +10260,8 @@
   <definition>文化的知識</definition>
   <definitionid>42096</definitionid>
   <notes>心態詞（認識系）； 社会の慣習・伝承・常識に基づいて知っている；「ka&apos;u lo nu lo cticinza gau sanli ne&apos;i lo risykabri cu na se curmi／お茶碗にお箸を立てるのはいけないことよ」 ・読み方： カフ ・関連語： {kluju&apos;o} </notes>
-  <glossword word="文化的知識" />
   <glossword word="常識" />
+  <glossword word="文化的知識" />
 </valsi>
 <valsi word="kaurselju'o" type="lujvo">
   <user>
@@ -10451,8 +10452,8 @@
   <definition>反復 （ ke&apos;u 反復 - ke&apos;unai 展開）</definition>
   <definitionid>66193</definitionid>
   <notes>心態詞（談話系）； 以前に言ったことを再び持ち出す「ke&apos;u lo catni cmetcita cu sarcu／身分証明書が必要だってば」 「coi ke&apos;u／また会ったね」 「.ienai ke&apos;u／何度も言うが、私は反対だ」 ・読み方： ケフ ・関連語：  {refbasna}, {krefu}, {rapli}, {velde&apos;a}</notes>
-  <glossword word="だってば" sense="反復" />
   <glossword word="前にも言ったが" sense="反復" />
+  <glossword word="だってば" sense="反復" />
 </valsi>
 <valsi word="ke'unai" type="cmavo-compound">
   <selmaho>UI*3</selmaho>
@@ -10614,8 +10615,8 @@
   <definition>$x_1$ は $x_2$ （箇所）において鋭い</definition>
   <definitionid>39740</definitionid>
   <notes>・大意： 鋭い ・読み方： キンルィ ・語呂合わせ： 鋭い金利 ・関連語： {balre}, {dakfu}, {jesni}</notes>
-  <glossword word="鋭利" />
   <glossword word="鋭い" />
+  <glossword word="鋭利" />
 </valsi>
 <valsi word="ki'o" type="cmavo">
   <selmaho>PA3</selmaho>
@@ -10694,11 +10695,11 @@
   <definition>$x_1$ は $x_2$ （終点）に $x_3$ （起点）から $x_4$ （経路）を $x_5$ （方法）で行く／来る</definition>
   <definitionid>40562</definitionid>
   <notes>・大意： 行来 ・読み方： クルァマ  ・語呂合わせ： 来る ・関連語： {cadzu}, {bajra}, {marce}, {vofli}, {litru}, {muvdu}, {cpare}, {ka&apos;a}, {pluta}, {bevri}, {farlu}, {limna}, {vitke}</notes>
-  <glossword word="いく" sense="行く" />
-  <glossword word="往来" />
   <glossword word="来る" />
-  <glossword word="行く" />
+  <glossword word="いく" sense="行く" />
   <glossword word="くる" sense="来る" />
+  <glossword word="往来" />
+  <glossword word="行く" />
   <keyword word="行く者／来る者" place="1" />
   <keyword word="行き先" place="2" />
   <keyword word="出発地" place="3" />
@@ -11136,8 +11137,8 @@
   <definitionid>66195</definitionid>
   <notes>心態詞（談話系）； しかし／だが／ところが／それでも「tu&apos;a da se tirna je ku&apos;i na&apos;e se viska／声はすれども姿は見えず」 「mi ca cliva .i ku&apos;i mi ba za xruti／今は席を外すが、後で戻ってくる」 ・読み方： クヒ ・関連語： {karbi}, {dukti}, {nalpanra}</notes>
   <glossword word="でも" sense="しかしながら" />
-  <glossword word="ところが" sense="しかしながら" />
   <glossword word="だが" sense="しかしながら" />
+  <glossword word="ところが" sense="しかしながら" />
 </valsi>
 <valsi word="ku'inai" type="cmavo-compound">
   <selmaho>UI*3b</selmaho>
@@ -11148,9 +11149,9 @@
   <definition>だから／つまり／だって</definition>
   <definitionid>66196</definitionid>
   <notes>心態詞（談話系）； {ku&apos;i} の反対。 期待通りの接続を表す。 「lo mensi pu cpapro lo nu spebi&apos;o .i ku&apos;inai lo si&apos;o tolspe cu marde my.／妹は結婚の申し出を断った。独身主義者だから。」 ・読み方： クヒナイ ・関連語： {sarxe}</notes>
-  <glossword word="だって" sense="期待通りの接続" />
   <glossword word="つまり" sense="期待通りの接続" />
   <glossword word="だから" sense="期待通りの接続" />
+  <glossword word="だって" sense="期待通りの接続" />
 </valsi>
 <valsi word="kukte" type="gismu">
   <rafsi>kuk</rafsi>
@@ -11324,10 +11325,10 @@
   <definition>蓋然性； ありそう （ la&apos;a ありそう - la&apos;anai ありそうもない）</definition>
   <definitionid>66197</definitionid>
   <notes>心態詞（談話系）； 事物が真でありうる「la&apos;a mi se xebni／私、嫌われているのかも。」 「.i le mensi be mi ca xabju la boston ja&apos;e le nu la&apos;a mi vitke fi le se diklo／私の姉が今ボストンに住んでいるから、私はたぶんその辺りを訪れるだろう」 「la&apos;a le vukrygu&apos;e tcini cu ba se jalge lo nu panpi ku&apos;i／ただ、ウクライナ情勢は結果として平和をもたらすことになりそうだ」 ・読み方： ルァハ ・関連語： {lakne}</notes>
+  <glossword word="だろう" sense="蓋然性" />
   <glossword word="きっと" sense="蓋然性" />
   <glossword word="かもしれない" sense="蓋然性" />
   <glossword word="ありそう" sense="蓋然性" />
-  <glossword word="だろう" sense="蓋然性" />
   <glossword word="たぶん" sense="蓋然性" />
 </valsi>
 <valsi word="la'anai" type="cmavo-compound">
@@ -11507,8 +11508,8 @@
   <definition>$x_1$ は $x_2$ （所）の湖／池／水たまり</definition>
   <definitionid>39782</definitionid>
   <notes>・大意： 湖 ・読み方： ルァルゥクゥ  ・関連語： {daplu}, {djacu}, {rirxe}, {xamsi}, {zbani}</notes>
-  <glossword word="湖" />
   <glossword word="池" />
+  <glossword word="湖" />
   <glossword word="沼" />
 </valsi>
 <valsi word="lamji" type="gismu">
@@ -11704,8 +11705,8 @@
   <definition>$x_1$ はアルゴン (Ar)</definition>
   <definitionid>42246</definitionid>
   <notes>{lazni} {navni}; {ratni}</notes>
-  <glossword word="Ar" sense="アルゴン" />
   <glossword word="アルゴン" />
+  <glossword word="Ar" sense="アルゴン" />
   <keyword word="アルゴン" place="1" />
 </valsi>
 <valsi word="lazyzukykei" type="lujvo">
@@ -11897,10 +11898,10 @@
   <definition>明らかに （ li&apos;a 明らかに - li&apos;anai それとなく）</definition>
   <definitionid>66204</definitionid>
   <notes>心態詞（談話系）；「li&apos;a lo&apos;i solba&apos;a co&apos;a barda／太陽の黒点が明らかに増えている。」 「li&apos;a la lojban zmadu la postskript lo ka frili／明らかにロジバンはPostScriptより簡単だ」 「.i li&apos;a mi naku viska ro marna pilno .i ku&apos;i lo zasni nu bebna cu se rinka lo nu pilno lo marna .i ro prenu cu djuno la&apos;e di&apos;u／もちろん全てのマリファナ使用者を見たわけではないが、一時的に愚かな言動をするのはマリファナの使用が原因だ。皆そのことを知っている。」 ・読み方： ルィハ ・関連語： {klina}</notes>
-  <glossword word="明白" sense="明らかに" />
+  <glossword word="もちろん" sense="明らかに" />
   <glossword word="当然" sense="明らかに" />
   <glossword word="自明" sense="明らかに" />
-  <glossword word="もちろん" sense="明らかに" />
+  <glossword word="明白" sense="明らかに" />
 </valsi>
 <valsi word="li'anai" type="cmavo-compound">
   <selmaho>UI*3</selmaho>
@@ -12907,11 +12908,11 @@
   <definition>$x_1$ は $x_2$ （審美者）にとって $x_3$ （性質）・ $x_4$ （審美基準）において美しい／綺麗／麗しい／ハンサム／かわいい</definition>
   <definitionid>39852</definitionid>
   <notes>・大意： 美しい ・読み方： メルゥビ  ・関連語： {pluka}, {xamgu}</notes>
-  <glossword word="ハンサムな" />
-  <glossword word="美しい" />
-  <glossword word="みめよい" />
   <glossword word="かわいい" />
+  <glossword word="美しい" />
   <glossword word="優雅な" />
+  <glossword word="ハンサムな" />
+  <glossword word="みめよい" />
 </valsi>
 <valsi word="meljo" type="gismu">
   <rafsi>mej</rafsi>
@@ -13837,8 +13838,8 @@
   <definitionid>40455</definitionid>
   <notes>x3はプラス／マイナスなど。 ・大意： とても ・読み方： ムチェ ・語呂合わせ： むちぇむちぇ（めちゃめちゃ）凄い, mucho ・関連語： {milxe}, {traji}, {banli}, {carmi}, {nutli}, {traji}</notes>
   <glossword word="すごい" />
-  <glossword word="凄い" />
   <glossword word="とても" />
+  <glossword word="凄い" />
 </valsi>
 <valsi word="mu'u" type="cmavo">
   <selmaho>BAI</selmaho>
@@ -13897,8 +13898,8 @@
   <definition>$x_1$ は $x_2$ を徘徊する</definition>
   <definitionid>41868</definitionid>
   <notes>{muvdu} {zvati}</notes>
-  <glossword word="徘徊" />
   <glossword word="うろつく" />
+  <glossword word="徘徊" />
 </valsi>
 <valsi word="muzga" type="gismu">
   <rafsi>muz</rafsi>
@@ -14055,9 +14056,9 @@
   <definition>$x_1=d_1$は$x_2=d_2$(日)の$x_4=g_2$(仕事)をする$x_3=g_1$(労働者)の休業日/非番</definition>
   <definitionid>36675</definitionid>
   <notes>d_3は不要であると考えて消去しました(和訳)</notes>
-  <glossword word="非労働日" />
   <glossword word="運休日" />
   <glossword word="休業日" />
+  <glossword word="非労働日" />
 </valsi>
 <valsi word="namcu" type="gismu">
   <rafsi>nac</rafsi>
@@ -14188,8 +14189,8 @@
   <definition>$x_1$ （事／経験）は $x_2$ （者）に感覚機能 $x_3$ に関して条件 $x_4$ の下で未視感 (jamais-vu) を与える</definition>
   <definitionid>42602</definitionid>
   <notes>$x_1$ が物である場合は jai narprugastcica; {pu}{nai}, {ganse} {tcica}; {gastcica}, {prugastcica}</notes>
-  <glossword word="ジャメヴュ" sense="jamais-vu" />
   <glossword word="未視感" sense="jamais-vu" />
+  <glossword word="ジャメヴュ" sense="jamais-vu" />
   <glossword word="ジャメヴ" sense="jamais-vu" />
 </valsi>
 <valsi word="natfe" type="gismu">
@@ -14309,8 +14310,8 @@
   </user>
   <definition>$ci_1$=$cn_2$=$v_1$ は $ci_2$ （種）のサギ／シラサギ／サンカノゴイ亜科</definition>
   <definitionid>67124</definitionid>
-  <glossword word="シラサギ" />
   <glossword word="サギ" sense="鳥類" />
+  <glossword word="シラサギ" />
 </valsi>
 <valsi unofficial="true" word="ne'e" type="experimental cmavo">
   <selmaho>CAI</selmaho>
@@ -14533,8 +14534,8 @@
   <definition>$x_1$ はネオン (Ne)</definition>
   <definitionid>42243</definitionid>
   <notes>{cnino} {navni}; {ratni}</notes>
-  <glossword word="ネオン" />
   <glossword word="Ne" sense="ネオン" />
+  <glossword word="ネオン" />
   <keyword word="ネオン" place="1" />
 </valsi>
 <valsi word="ni'o" type="cmavo">
@@ -14695,10 +14696,10 @@
   <definition>$x_1$ は $x_2$ （題目）・ $x_3$ （作者）・ $x_4$ （読者）の覚え書き／メッセージ／メモ</definition>
   <definitionid>40457</definitionid>
   <notes>「xatra」よりも、内容は簡潔で、受け手は不特定。個人的な「メモ」の意で使う場合はx4は無いものとされる。 ・大意： 覚え書き ・読み方： ノチ ・語呂合わせ： nooto ,ノートにちいとメモ ・関連語： {xatra}, {nuzba}, {mrilu}, {morji}</notes>
-  <glossword word="通知" />
-  <glossword word="覚え書き" />
   <glossword word="メッセージ" />
   <glossword word="メモ" />
+  <glossword word="覚え書き" />
+  <glossword word="通知" />
 </valsi>
 <valsi word="no'u" type="cmavo">
   <selmaho>GOI</selmaho>
@@ -14969,8 +14970,8 @@
   <definition>親近 （ o&apos;e 親近 - o&apos;enai 隔絶）</definition>
   <definitionid>42108</definitionid>
   <notes>心態詞； それを身近に感じる気持； なれなれしい気持 「.o&apos;e mi do ba kansa lo nu vitke lo mikce／病院に行くの、付き添ってあげる」 ・読み方： オヘ  ・関連語： {cnijbi}, {cnikansa}</notes>
-  <glossword word="親近" />
   <glossword word="身近" />
+  <glossword word="親近" />
   <glossword word="親しみ" />
 </valsi>
 <valsi word="o'enai" type="cmavo-compound">
@@ -15050,10 +15051,10 @@
   <definition>寛容 （ o&apos;o 寛容 - o&apos;ocu&apos;i 辛抱 - o&apos;onai 憤怒）</definition>
   <definitionid>42113</definitionid>
   <notes>心態詞； 一般には反感の的となるそれにたいして寛大に許容する気持 「.o&apos;o ko za&apos;u re&apos;u troci／構いません、もう一度やってみてください」・読み方： オホ  ・関連語： {xendo}, {de&apos;acni}</notes>
-  <glossword word="寛大" />
+  <glossword word="許容" />
   <glossword word="構わない" sense="寛容" />
   <glossword word="寛容" />
-  <glossword word="許容" />
+  <glossword word="寛大" />
 </valsi>
 <valsi word="o'ocu'i" type="cmavo-compound">
   <selmaho>UI*1</selmaho>
@@ -15098,9 +15099,9 @@
   <definition>平静 （ o&apos;u くつろぎ - o&apos;ucu&apos;i 平静 - o&apos;unai 緊張）</definition>
   <definitionid>42117</definitionid>
   <notes>心態詞； 緊張を覚えない情況 「.o&apos;u cu&apos;i mi pu tinbe lo selfla／私は法に従ったまでだ」  ・読み方： オフシュヒ ・関連語： {cnilanxe}</notes>
+  <glossword word="平静" />
   <glossword word="落ち着く" />
   <glossword word="平常心" />
-  <glossword word="平静" />
 </valsi>
 <valsi word="o'unai" type="cmavo-compound">
   <selmaho>UI*1</selmaho>
@@ -15145,9 +15146,9 @@
   <definition>$x_1$ は $x_2$ （事）を $x_3$ （見込み／確率 0-1）で期待する／希望する／願う；  $x_2$ は望まれている</definition>
   <definitionid>39930</definitionid>
   <notes>x3にはx1による主観的な起こりやすさの値（0-1）が入り、その値によって「希望」「願望」「期待」のいずれかの意味になる。x2が期待薄な（x3が0に近い）ときは「願望」、十分起こりやすそうであるならば「希望」、その確率がx1にとって1に近いときは「期待」になる。x3の値はふつうは非厳密数詞（{li} {piso&apos;u} から {li} {piro} まで）によって表される。 ・大意： 希望 ・読み方： パシナ  ・関連語： {djica}</notes>
-  <glossword word="願う" />
   <glossword word="期待する" />
   <glossword word="希望する" />
+  <glossword word="願う" />
   <glossword word="望む" />
 </valsi>
 <valsi word="pa'e" type="cmavo">
@@ -15629,8 +15630,8 @@
   <definition>$x_1$ は $x_2$ （インク）の、手順 $x_3$ に従って使われるペン・筆</definition>
   <definitionid>39956</definitionid>
   <notes>使っていて元の形が変わらない筆記具全般 ・大意： ペン ・読み方： ペンビ  ・語呂合わせ： ペン美 ・関連語： {ciska}, {pinsi}, {xinmo}, {pimlu}</notes>
-  <glossword word="筆" />
   <glossword word="ペン" />
+  <glossword word="筆" />
 </valsi>
 <valsi word="pencu" type="gismu">
   <rafsi>pec</rafsi>
@@ -16229,8 +16230,8 @@
   <definitionid>42125</definitionid>
   <notes>心態詞（談話系）；「do po&apos;o klama／あなただけが来た」 ・読み方： ポホ  ・関連語： {pamei}, {mulno}, {frica}</notes>
   <glossword word="たった" sense="これだけ" />
-  <glossword word="だけ" />
   <glossword word="ほんの" />
+  <glossword word="だけ" />
 </valsi>
 <valsi word="porpi" type="gismu">
   <rafsi>pop</rafsi>
@@ -16358,8 +16359,8 @@
   <definition>$x_1$ （文字列）は $x_2$ （題目）に関する、 $x_3$ （者）から $x_4$ （者）への質問／質疑</definition>
   <definitionid>40001</definitionid>
   <notes>・大意： 質問 ・読み方： プレティ ・関連語： {nabmi}, {danfu}, {ciksi}, {frati}, {spuda}, {cpedu}</notes>
-  <glossword word="質問" />
   <glossword word="問い" />
+  <glossword word="質問" />
 </valsi>
 <valsi word="prevrici" type="lujvo">
   <user>
@@ -16379,10 +16380,10 @@
   <definition>$x_1=pi_1$ はモチーフ$x_2=pi_2=pr_1$の作者$x_3=pi_3$による肖像</definition>
   <definitionid>41865</definitionid>
   <notes>{vi&apos;a} {prexra} で肖像画; {vi&apos;u} {prexra} で立体像。 cf. {prenu} {pixra}</notes>
-  <glossword word="肖像画" />
-  <glossword word="彫像" />
-  <glossword word="肖像" />
   <glossword word="塑像" />
+  <glossword word="肖像" />
+  <glossword word="彫像" />
+  <glossword word="肖像画" />
 </valsi>
 <valsi word="prije" type="gismu">
   <rafsi>pij</rafsi>
@@ -16443,8 +16444,8 @@
   <definition>$x_1$ （事／経験）は $x_2$ （者）に感覚機能 $x_3$ に関して条件 $x_4$ の下で既視感 (déjà-vu) を与える</definition>
   <definitionid>42598</definitionid>
   <notes>$x_1$ が物である場合は jai prugastcica; {pu} {ganse} {tcica}; {gastcica}, {narprugastcica}</notes>
-  <glossword word="デジャヴュ" sense="déjà-vu" />
   <glossword word="デジャヴ" sense="déjà-vu" />
+  <glossword word="デジャヴュ" sense="déjà-vu" />
   <glossword word="既視感" sense="déjà-vu" />
 </valsi>
 <valsi word="pruni" type="gismu">
@@ -16601,8 +16602,8 @@
   <definition>$x_1$ は $x_2$ （物質）の粉</definition>
   <definitionid>40014</definitionid>
   <notes>食用の粉も。 ・大意： 粉 ・読み方： プルモ  ・関連語： {pulce}, {zalvi}</notes>
-  <glossword word="粉末" />
   <glossword word="粉" />
+  <glossword word="粉末" />
 </valsi>
 <valsi word="pu'u" type="cmavo">
   <rafsi>puv</rafsi>
@@ -16842,8 +16843,8 @@
   <definition>$x_1$ は $x_2$ （内容）・ $x_3$ （価値観／文化）の神話／伝説</definition>
   <definitionid>40028</definitionid>
   <notes>・大意： 神話 ・読み方： ランミ  ・関連語： {lijda}, {lisri}, {crida}</notes>
-  <glossword word="神話" />
   <glossword word="伝説" />
+  <glossword word="神話" />
 </valsi>
 <valsi word="ransu" type="gismu">
   <user>
@@ -17547,8 +17548,8 @@
   <definition>知的／精神的 （ ro&apos;e 知的／精神的 - ro&apos;enai 非精神的）</definition>
   <definitionid>42136</definitionid>
   <notes>心態詞（修飾系・カテゴリ）； ・読み方： ロヘ  ・関連語： {menli}</notes>
-  <glossword word="知的" />
   <glossword word="精神的" />
+  <glossword word="知的" />
 </valsi>
 <valsi word="ro'enai" type="cmavo-compound">
   <selmaho>UI*4</selmaho>
@@ -17606,9 +17607,9 @@
   <definition>$x_1$ は $x_2$ （成分）・ $x_3$ （産地）の岩／石</definition>
   <definitionid>40053</definitionid>
   <notes>・大意： 岩 ・読み方： ロクシ  ・語呂合わせ： ロック石 ・関連語： {kunra}, {jemna}, {canre}</notes>
-  <glossword word="岩石" />
-  <glossword word="石" />
   <glossword word="岩" />
+  <glossword word="石" />
+  <glossword word="岩石" />
 </valsi>
 <valsi word="rolcumja'e" type="lujvo">
   <user>
@@ -17627,8 +17628,8 @@
   <definition>$x_1$ は $x_2$ （荷／客）・ $x_3$ （線路網／軌道）・ $x_4$ （原動力）の 各駅停車の 列車／鉄道／電車／汽車／地下鉄</definition>
   <definitionid>66633</definitionid>
   <notes>{ro} zei {denpa} {trene}</notes>
-  <glossword word="鈍行列車" />
   <glossword word="各駅停車の列車" />
+  <glossword word="鈍行列車" />
 </valsi>
 <valsi word="romge" type="gismu">
   <rafsi>rog</rafsi>
@@ -17878,11 +17879,11 @@
   </user>
   <definition>$x_1$は$x_2$(金額)コード ISO 4217 JPY の通貨</definition>
   <definitionid>36714</definitionid>
-  <glossword word="日本円" sense="金銭" />
+  <glossword word="日本円" sense="金融" />
   <glossword word="日本円" sense="日本" />
   <glossword word="日本円" sense="貨幣" />
   <glossword word="日本円" sense="通貨" />
-  <glossword word="日本円" sense="金融" />
+  <glossword word="日本円" sense="金銭" />
 </valsi>
 <valsi word="rusko" type="gismu">
   <rafsi>ruk</rafsi>
@@ -18774,8 +18775,8 @@
   <definition>$x_1$ は $x_2$ （情報）を表す selbri のタグ</definition>
   <definitionid>42276</definitionid>
   <notes>{selbri} {tcita}; {se} {bridi}.</notes>
-  <glossword word="タグ" sense="述語のタグ" />
   <glossword word="述語のタグ" />
+  <glossword word="タグ" sense="述語のタグ" />
 </valsi>
 <valsi word="selci" type="gismu">
   <rafsi>sle</rafsi>
@@ -18827,8 +18828,8 @@
   <definitionid>36710</definitionid>
   <notes>復号は{tolselmifybi&apos;o} &quot;暗号化すること&quot;ならば{nunselmifybi&apos;o} &quot;復号化すること&quot;ならば{nuntolselmifybi&apos;o}</notes>
   <glossword word="平文" sense="暗号" />
-  <glossword word="暗号文" sense="暗号" />
   <glossword word="暗号化する" sense="暗号" />
+  <glossword word="暗号文" sense="暗号" />
 </valsi>
 <valsi word="selsrodi'i" type="lujvo">
   <user>
@@ -18837,8 +18838,8 @@
   </user>
   <definition>$s1$ は $s_2=j_1$ （お金）を $s3$ （容器/空間）に貯金する/貯蓄する</definition>
   <definitionid>35306</definitionid>
-  <glossword word="貯蓄する" />
   <glossword word="貯金する" />
+  <glossword word="貯蓄する" />
 </valsi>
 <valsi word="sema'e" type="cmavo-compound">
   <selmaho>BAI*</selmaho>
@@ -19425,8 +19426,8 @@
   </user>
   <definition>$p_1$ は $p_2$ （主題）の$p_3$ （作者）がつくった $p_4=c_2$ （飾り）の 雪像／雪だるま／雪うさぎ</definition>
   <definitionid>64842</definitionid>
-  <glossword word="雪像" />
   <glossword word="雪だるま" />
+  <glossword word="雪像" />
 </valsi>
 <valsi word="sigja" type="gismu">
   <rafsi>sig</rafsi>
@@ -19577,8 +19578,8 @@
   </user>
   <definition>$x_1=s_1=d_1$ は眠い／眠りたい／寝たい</definition>
   <definitionid>67490</definitionid>
-  <glossword word="眠い" />
   <glossword word="眠りたい" />
+  <glossword word="眠い" />
 </valsi>
 <valsi word="sirji" type="gismu">
   <rafsi>sir</rafsi>
@@ -19660,8 +19661,8 @@
   <definition>$s_1=c_1$は$s_2$（生成者）の$c_2$（公開鍵）と対をなす秘密鍵</definition>
   <definitionid>38689</definitionid>
   <notes>$c_2$は$s_2$（生成者）の$s_1$（秘密鍵）と対をなす公開鍵</notes>
-  <glossword word="公開鍵" sense="暗号" />
   <glossword word="秘密鍵" sense="暗号" />
+  <glossword word="公開鍵" sense="暗号" />
 </valsi>
 <valsi word="sivypalku" type="lujvo">
   <user>
@@ -19826,8 +19827,8 @@
   <definition>$x_1$ は $x_2$ （素材）の円柱（形状）</definition>
   <definitionid>40135</definitionid>
   <notes>シリンダー. ・大意： 円柱 ・読み方： スルァヌ ・関連語： {kamju}, {gunro}; {tubnu}（管／中空の筒）</notes>
-  <glossword word="円柱" sense="形状" />
   <glossword word="シリンダー" />
+  <glossword word="円柱" sense="形状" />
 </valsi>
 <valsi word="slari" type="gismu">
   <rafsi>sar</rafsi>
@@ -20175,8 +20176,8 @@
   <definition>$x_1$ はヘリウム (He)</definition>
   <definitionid>42240</definitionid>
   <notes>{solri} {navni}; {ratni}</notes>
-  <glossword word="ヘリウム" />
   <glossword word="He" sense="ヘリウム" />
+  <glossword word="ヘリウム" />
   <keyword word="ヘリウム" place="1" />
 </valsi>
 <valsi word="solri" type="gismu">
@@ -20210,10 +20211,10 @@
   <definition>$x_1$ は $x_2$ （隊）の戦士／兵士／闘士</definition>
   <definitionid>40164</definitionid>
   <notes>・大意： 兵士 ・読み方： ソンシ  ・語呂合わせ： senci 戦士 ・関連語： {bilni}, {damba}, {jenmi}, {xarci}, {pulji}</notes>
-  <glossword word="武士" />
   <glossword word="戦士" />
-  <glossword word="兵士" />
   <glossword word="軍人" />
+  <glossword word="武士" />
+  <glossword word="兵士" />
 </valsi>
 <valsi word="so'o" type="cmavo">
   <rafsi>sos</rafsi>
@@ -20470,8 +20471,8 @@
   <definition>$x_1$ は $x_2$ （命題）が $x_3$ （題目）について本当であると仮定する／想定する； $x_2$ （命題）は $x_1$ にとって暗黙の了解となっている</definition>
   <definitionid>40178</definitionid>
   <notes>x1がx2のことを自明のこととして受け入れ（てい）ることを意味する。「思い込んでいる」も。　・読み方： スルマ  ・語呂合わせ： 仮定する真（ま） ・関連語： {smadi}, {birti}, {ru&apos;a}</notes>
-  <glossword word="仮定する" />
   <glossword word="想定する" />
+  <glossword word="仮定する" />
 </valsi>
 <valsi word="sruri" type="gismu">
   <rafsi>rur</rafsi>
@@ -21817,8 +21818,8 @@
   <definition>$x_1$ は $x_2$ （時点）から $x_3$ （時点）までの間隔／経過／時間</definition>
   <definitionid>40238</definitionid>
   <notes>「ditcu」と違い、特定の開始時点と終了時点が含意される。 ・大意： 経過時間 ・読み方： テムシ  ・関連語： {ditcu} (継続時間), {cacra}, {cedra}, {citsi}, {ranji}, {tcika}, {junla}, {renvi}</notes>
-  <glossword word="間隔" />
   <glossword word="時間" />
+  <glossword word="間隔" />
   <glossword word="期間" />
 </valsi>
 <valsi word="teme'a" type="cmavo-compound">
@@ -21990,10 +21991,10 @@
   <definition>$x_{1}$ は $x_{2}$ 次元多面体 $x_{3}$ の $x_{4}$ （デフォルトで $x_{2}$-1）次元辺； $x_{4}$=1 のとき $x_{1}$ は稜； $x_{4}$=0 のとき $x_{1}$ は頂点</definition>
   <definitionid>41306</definitionid>
   <notes>{te} {kubli}, {cimde}</notes>
-  <glossword word="頂点" sense="多面体の" />
   <glossword word="稜" sense="多面体の" />
-  <glossword word="辺" sense="多面体の" />
   <glossword word="面" sense="多面体の" />
+  <glossword word="頂点" sense="多面体の" />
+  <glossword word="辺" sense="多面体の" />
 </valsi>
 <valsi word="termifckiku" type="lujvo">
   <user>
@@ -22147,8 +22148,8 @@
   <definitionid>42164</definitionid>
   <notes>心態詞（認識系）；「～らしいよ」 ・読み方： ティヘ  ・関連語： {tirna}, {sitna}, {tcidu}</notes>
   <glossword word="らしい" sense="伝聞" />
-  <glossword word="そうだ" sense="伝聞" />
   <glossword word="伝聞" />
+  <glossword word="そうだ" sense="伝聞" />
 </valsi>
 <valsi word="tigni" type="gismu">
   <rafsi>tig</rafsi>
@@ -22434,8 +22435,8 @@
   <definition>$m_1=b_1$(暗号文)は$m_2=b_2$(平文)へ$m_3=b_3$(暗号アルゴリズム/暗号方式)によって復号する</definition>
   <definitionid>36711</definitionid>
   <notes>暗号化の真逆であるが、「復号化」でなく、「復号」が本来暗号学上の用語としては正しい</notes>
-  <glossword word="平文" sense="暗号" />
   <glossword word="暗号文" sense="暗号" />
+  <glossword word="平文" sense="暗号" />
   <glossword word="復号する" sense="暗号" />
 </valsi>
 <valsi word="tolmu'i" type="lujvo">
@@ -22647,8 +22648,8 @@
   <definition>$x_1$は$x_2$（種類）の桜</definition>
   <definitionid>20484</definitionid>
   <notes>関連語: {xrula}, {mudri}, {tricu}.</notes>
-  <glossword word="桜" />
   <glossword word="さくら" sense="桜" />
+  <glossword word="桜" />
   <glossword word="サクラ" sense="桜" />
 </valsi>
 <valsi word="tsali" type="gismu">
@@ -22730,11 +22731,11 @@
   <definition>$x_1$ は $x_2$ （素材）・ $x_3$ （内容）の管／筒／パイプ／シリンダー／チューブ</definition>
   <definitionid>40271</definitionid>
   <notes>{slanu} と違い、円柱形でなくても良く、外周 $x_2$ と内部 $x_3$ の素材の違いを表現できる。「スリーブ」「ホース」も。 ・大意： 管 ・読み方： トゥブヌ  ・関連語： {kevna}, {canlu}</notes>
-  <glossword word="チューブ" />
-  <glossword word="管" />
-  <glossword word="筒" />
-  <glossword word="パイプ" />
   <glossword word="シリンダー" sense="中空の" />
+  <glossword word="管" />
+  <glossword word="チューブ" />
+  <glossword word="パイプ" />
+  <glossword word="筒" />
 </valsi>
 <valsi word="tu'e" type="cmavo">
   <selmaho>TUhE</selmaho>
@@ -22986,8 +22987,8 @@
   <definition>驚嘆 （ ue 驚嘆 - uecu&apos;i 無動揺 - uenai 覚悟）</definition>
   <definitionid>15801</definitionid>
   <notes>心態詞； 予期していなかったそれに驚く気持 「.ue ta lenku／ひぃっ、冷たい！」 ・読み方： ウェ ・関連語： {selspaji}</notes>
-  <glossword word="驚く" />
   <glossword word="びっくりする" />
+  <glossword word="驚く" />
   <glossword word="驚嘆" />
 </valsi>
 <valsi word="u'e" type="cmavo">
@@ -23044,8 +23045,8 @@
   <definition>幸福 （ ui 幸福 - uinai 悲嘆）</definition>
   <definitionid>15803</definitionid>
   <notes>心態詞； それについて嬉しさや幸せを感じる気持 「.ui mi co&apos;a se panzi／パパに／ママになりました！」 ・読み方： ウィ ・関連語： {gleki}</notes>
-  <glossword word="幸せ" />
   <glossword word="幸福" />
+  <glossword word="幸せ" />
 </valsi>
 <valsi word="u'i" type="cmavo">
   <selmaho>UI1</selmaho>
@@ -23091,9 +23092,9 @@
   <definition>完全 （ uo 完全 - uonai 不完全）</definition>
   <definitionid>42176</definitionid>
   <notes>心態詞； それについて完全／完了を感じる気持； 終わった、出来た、十分であることにたいする気持「ba&apos;o bevri lo velmikce .uo／薬を持ってきたからもう大丈夫」 ・読み方： ウォ ・関連語： {mulno}, {mansa}, {fanmo}, {snada}</notes>
-  <glossword word="完成" />
   <glossword word="完全" />
   <glossword word="完了" />
+  <glossword word="完成" />
 </valsi>
 <valsi word="u'o" type="cmavo">
   <selmaho>UI1</selmaho>
@@ -23115,8 +23116,8 @@
   <definition>内気 （ u&apos;o 勇気 - u&apos;ocu&apos;i 内気 - u&apos;onai 臆病）</definition>
   <definitionid>42179</definitionid>
   <notes>心態詞； それについて果敢となれず、おそるおそるとしか取り組めない／対応できない気持 「.u&apos;o cu&apos;i xu mi zifre lo nu stali／えーっと、このままここにいて良いのかな？」  ・読み方： ウホシュヒ ・関連語： {jikterpa}</notes>
-  <glossword word="内気" />
   <glossword word="おそるおそる" />
+  <glossword word="内気" />
 </valsi>
 <valsi word="uonai" type="cmavo-compound">
   <selmaho>UI*1</selmaho>
@@ -23127,10 +23128,10 @@
   <definition>不完全 （ uo 完全 - uonai 不完全）</definition>
   <definitionid>42177</definitionid>
   <notes>心態詞； それが不完全／不十分／未了であると感じる気持 「.uo nai do tu na ru&apos;e darxi／おしい、もう少しであれを打つところだった」 ・読み方： ウォナイ ・関連語： {fliba}</notes>
+  <glossword word="未完成" />
+  <glossword word="未了" />
   <glossword word="不十分" />
   <glossword word="不完全" />
-  <glossword word="未了" />
-  <glossword word="未完成" />
 </valsi>
 <valsi word="u'onai" type="cmavo-compound">
   <selmaho>UI*1</selmaho>
@@ -23152,9 +23153,9 @@
   <definition>哀憫 （ uu 哀憫 - uunai 酷虐）</definition>
   <definitionid>15805</definitionid>
   <notes>心態詞； 苦境にあるそれがかわいそうで哀しむ気持； 自分以外の物／者にたいする憐れみの気持 「.uu mi ba dunda lo boxfo do／かわいそうに、毛布をあげましょう」 ・読み方： ウゥ ・関連語： {kecti}</notes>
-  <glossword word="同情" />
-  <glossword word="哀憫" />
   <glossword word="哀れむ" />
+  <glossword word="哀憫" />
+  <glossword word="同情" />
 </valsi>
 <valsi word="u'u" type="cmavo">
   <selmaho>UI1</selmaho>
@@ -23165,9 +23166,9 @@
   <definition>後悔 （ u&apos;u 後悔 - u&apos;ucu&apos;i 潔白 - u&apos;unai 悪意）</definition>
   <definitionid>15806</definitionid>
   <notes>心態詞； 既に起きた／行為したそれを悔やみ、取り消したいと思う気持 「.u&apos;u mi pu na jundi／申し訳ない、不注意でした」 ・読み方： ウフ  ・関連語： {xenru}, {zugycni}</notes>
+  <glossword word="残念" />
   <glossword word="後悔" />
   <glossword word="遺憾" />
-  <glossword word="残念" />
 </valsi>
 <valsi word="u'ucu'i" type="cmavo-compound">
   <selmaho>UI*1</selmaho>
@@ -23178,8 +23179,8 @@
   <definition>潔白 （ u&apos;u 後悔 - u&apos;ucu&apos;i 潔白 - u&apos;unai 悪意）</definition>
   <definitionid>42182</definitionid>
   <notes>心態詞； 既成のそれについて、自分は潔白だと思う気持 「私のせいではない」「.u&apos;u cu&apos;i mi zukte no da／無実だ、私は何もしていない」 ・読み方： ウフシュヒ  ・関連語： {nalselra&apos;u}</notes>
-  <glossword word="潔白" />
   <glossword word="無実" />
+  <glossword word="潔白" />
 </valsi>
 <valsi word="uunai" type="cmavo-compound">
   <selmaho>UI*1</selmaho>
@@ -23274,9 +23275,9 @@
   <definition>言葉通り （va&apos;i 換言 - va&apos;inai 言葉通り）</definition>
   <definitionid>66215</definitionid>
   <notes>心態詞（談話系）； 表現が同じであることを表す。 表される事物が同じであることを表す {mi&apos;u} （BPFK の新しい意味）との違いに注意。「お言葉を返すようですが」「do raktu mi - .i va&apos;inai go&apos;i ra&apos;o／おまえは厄介者だ。 ― お言葉を返すようですが、それはあなたの方です。」「le&apos;o ko na rivli&apos;a mi - .i va&apos;inai go&apos;i ra&apos;o／やい、俺様から逃げるなよ。― それはこっちのセリフだ。」 「ti noi ka melbi cu krinu lo nu noda ve skicu - .i va&apos;inai／この美しさには言葉を失う―まさしく」 「la gleki cu gleki va&apos;inai ／喜さんが文字通り喜んでいる」 ・読み方： ヴァヒナイ</notes>
-  <glossword word="お言葉を返すようですが" sense="言葉通り" />
-  <glossword word="文字通り" sense="言葉通り" />
   <glossword word="まさしく" sense="言葉通り" />
+  <glossword word="文字通り" sense="言葉通り" />
+  <glossword word="お言葉を返すようですが" sense="言葉通り" />
 </valsi>
 <valsi word="vajni" type="gismu">
   <rafsi>vaj</rafsi>
@@ -23454,13 +23455,13 @@
   <definition>$x_1$ （売り手） は $x_2$ （品物やサービス）を $x_3$ （買い手）に $x_4$ の額／費用／出費で売る</definition>
   <definitionid>18471</definitionid>
   <notes>x1 は売り手／販売員。 x3 は x2 （品）を x1 から買う購入者（ terve&apos;u は「買う」になる）。 x4 は x2 （品）を売る際の x3 から受け取る額／が支払う額（ velve&apos;u は「費用である」になる）。 売りに出す（ fitselve&apos;u, selvenfriti ）。 x2 は特定の「品物」、あるいは群（集まり）としての「品物」、あるいは「～という事」、あるいは「～という性質」。  $x_{1}$ として「所有権を手放す者」、 $x_{2}$ として「所有権が移る商品」という sumti を引き出す（意味論的により厳密に言うなら {posyve&apos;u}, {posyselve&apos;u}）。 費用と価格の違いについては {jdima} の注を参照。 ・大意： 売買 ・読み方： ヴェシヌ ・関連語：{canja}, {dunda}, {janta}, {pleji}, {jerna}, {kargu}, {prali}, {zarci}, {vamji}, {jdima}（売り手がつける値段）, {fepni}, {friti}, {jerna}, {rupnu}</notes>
-  <glossword word="購入者" />
   <glossword word="はんばい" sense="販売" />
-  <glossword word="売る" />
-  <glossword word="売買" />
   <glossword word="販売" />
-  <glossword word="販売員" />
+  <glossword word="売買" />
+  <glossword word="売る" />
   <glossword word="うる" sense="売る" />
+  <glossword word="購入者" />
+  <glossword word="販売員" />
   <keyword word="売り手" place="1" />
   <keyword word="商品" place="2" />
   <keyword word="買い手" place="3" />
@@ -23900,8 +23901,8 @@
   <definition>$p_1=v_1$(ウイルス/病原体)は$p_2=v_2$に感染する</definition>
   <definitionid>42523</definitionid>
   <notes>parjiは試験的gismu {parji}{vidru}</notes>
-  <glossword word="感染" sense="医学" />
   <glossword word="罹患" sense="医学" />
+  <glossword word="感染" sense="医学" />
 </valsi>
 <valsi word="viska" type="gismu">
   <rafsi>vis</rafsi>
@@ -23922,8 +23923,8 @@
   <definition>$x_1=v_2=p_1$ は $x_2=v_1=p_2$ （者）にとって、$x_3=v_3$ （条件）のもとで、見栄えが良い／視覚的に心地よい／見やすい； $x_2$ は $x_1$ の見栄えが好きだ</definition>
   <definitionid>64117</definitionid>
   <notes>・関連語：{viska}, {pluka}</notes>
-  <glossword word="見やすい" />
   <glossword word="見栄えが良い" />
+  <glossword word="見やすい" />
   <keyword word="見栄えの良いもの" place="1" />
   <keyword word="見栄えの良さを感じる者" place="2" />
   <keyword word="見栄えが良いための条件" place="3" />
@@ -24088,10 +24089,10 @@
   </user>
   <definition>$x_1$ は $x_2$  に $x_3$ から戻る</definition>
   <definitionid>52841</definitionid>
+  <glossword word="帰る" />
   <glossword word="戻る" />
   <glossword word="かえる" sense="帰る" />
   <glossword word="もどる" sense="戻る" />
-  <glossword word="帰る" />
   <keyword word="戻る者" place="1" />
   <keyword word="戻る後の状態／状況" place="2" />
   <keyword word="戻る前の状態／状況" place="3" />
@@ -24230,8 +24231,8 @@
   <definition>徳／誉れ （ vu&apos;e 徳／誉れ - vu&apos;enai 罪／穢れ）</definition>
   <definitionid>42184</definitionid>
   <notes>心態詞（修飾系）； ・読み方： ヴヘ  ・関連語： {vrude}, {zungi}</notes>
-  <glossword word="徳" />
   <glossword word="誉れ" />
+  <glossword word="徳" />
 </valsi>
 <valsi word="vu'enai" type="cmavo-compound">
   <selmaho>UI*5</selmaho>
@@ -24383,9 +24384,9 @@
   <definition>既出の sumti のいくつか（複数）に取って代わる ： 代詞（sumti）；</definition>
   <definitionid>41175</definitionid>
   <notes>試験的 cmavo。「lo pulji cu bajra jersi lo zerle&apos;a i xai tatpi／警官が泥棒を追いかけた。両者とも疲れた。」 ・読み方： クァイ ・関連語：{ra}, {ri}, {ru}</notes>
+  <glossword word="彼ら" />
   <glossword word="皆" />
   <glossword word="両者" />
-  <glossword word="彼ら" />
 </valsi>
 <valsi word="xaicku" type="lujvo">
   <user>
@@ -24395,9 +24396,9 @@
   <definition>$x_1$ は $x_2$ （破壊者／攻撃者）によって性質 $x_3$ (ka) に関して破壊／攻撃された破損本／汚損本／ウェブサイト</definition>
   <definitionid>67385</definitionid>
   <notes>関連語： {cukta}, {xrani}</notes>
-  <glossword word="破損本" />
-  <glossword word="サイバー攻撃されたウェブサイト" />
   <glossword word="汚損本" />
+  <glossword word="サイバー攻撃されたウェブサイト" />
+  <glossword word="破損本" />
 </valsi>
 <valsi word="xajmi" type="gismu">
   <rafsi>xam</rafsi>
@@ -24465,11 +24466,11 @@
   <definition>$x_1$ は $x_2$ にとって、 $x_3$ （基準）で良い／好ましい</definition>
   <definitionid>40326</definitionid>
   <notes>「まあまあである／可」は {mlixau}, {norxau}, {xaurselcru}. ・大意： 良い ・読み方： クァムグ  ・語呂合わせ： よくかむグッド, xau(好), good,bon ・関連語： {melbi}, {xlali}, {vrude}, {zabna}</notes>
+  <glossword word="良い" />
+  <glossword word="可" sense="まあまあである" />
   <glossword word="すてきだ" />
   <glossword word="よい" />
   <glossword word="役に立つ" />
-  <glossword word="良い" />
-  <glossword word="可" sense="まあまあである" />
 </valsi>
 <valsi word="xampo" type="gismu">
   <rafsi>xap</rafsi>
@@ -24536,9 +24537,9 @@
   <definition>$x_1$ は $x_2$ （者）による想像；  $x_1$ は架空／想像上のもの／非現実</definition>
   <definitionid>40330</definitionid>
   <notes>・大意： 想像 ・読み方： クァンリ  ・語呂合わせ： ＜半分理解＞,想像を管理, xuan(幻), unreal ・関連語： {da&apos;i}, {fatci}, {senva}, {sucta}, {zasti}, {cfika}, {dacti}, {menli}, {sidbo}</notes>
-  <glossword word="架空" />
   <glossword word="幻想" />
   <glossword word="幻" />
+  <glossword word="架空" />
   <keyword word="非現実" place="1" />
   <keyword word="想像する" place="2" sense="空想" />
 </valsi>
@@ -24889,8 +24890,8 @@
   <definition>不特定の数：数量詞；</definition>
   <definitionid>41962</definitionid>
   <notes>「ある数」。 no&apos;o と違い、典型的な数であるとは限らない。 試験的 cmavo。 ・読み方： クォヘ ・関連語： {no&apos;o}, {zo&apos;e}; {tu&apos;o}, {xo}, {co&apos;e}, {do&apos;e}</notes>
-  <glossword word="ある数" />
   <glossword word="不特定の数" />
+  <glossword word="ある数" />
 </valsi>
 <valsi unofficial="true" word="xo'i" type="experimental cmavo">
   <selmaho>XOhI</selmaho>
@@ -25301,9 +25302,9 @@
   <definition>$x_1$ （宿泊者）は $x_2$ （宿泊施設／場所）に泊まる／一時滞在する</definition>
   <definitionid>41295</definitionid>
   <notes>{zasni} {xabju}; {vitke}</notes>
-  <glossword word="宿泊" />
   <glossword word="滞在" />
   <glossword word="泊まる" />
+  <glossword word="宿泊" />
   <keyword word="宿泊者" place="1" />
 </valsi>
 <valsi word="zau" type="cmavo">
@@ -25655,8 +25656,8 @@
   <definition>$x_1$ は $x_2$ よりも、 $x_3$ （性質／数量）の点で、 $x_4$ （度合）ほど優る／ $x_3$ が $x_1$ には $x_2$ よりももっとある</definition>
   <definitionid>40384</definitionid>
   <notes>・大意： 卓越 ・読み方： ズマドゥ  ・関連語： {mau}, {mleca}, {zenba}, {jmina}, {bancu}, {dukse}, {traji}</notes>
-  <glossword word="卓越" />
   <glossword word="優る" />
+  <glossword word="卓越" />
 </valsi>
 <valsi word="zmiku" type="gismu">
   <rafsi>zmi</rafsi>
@@ -26267,8 +26268,8 @@
 <nlword word="出生時刻" sense="誕生時刻" valsi="jbena" place="4" />
 <nlword word="生まれ" valsi="jbena" />
 <nlword word="生まれたもの" valsi="jbena" place="1" />
-<nlword word="生年月日" sense="誕生日" valsi="jbena" place="3" />
 <nlword word="生年月日" valsi="jbena" place="3" />
+<nlword word="生年月日" sense="誕生日" valsi="jbena" place="3" />
 <nlword word="産みの親" valsi="jbena" place="2" />
 <nlword word="決める" valsi="jdice" />
 <nlword word="価格" valsi="jdima" />
@@ -26296,10 +26297,10 @@
 <nlword word="クロム" valsi="jinmrkromi" />
 <nlword word="Cr" sense="元素" valsi="jinmrkromi" />
 <nlword word="ニオブ" valsi="jinmrniobi" place="1" />
-<nlword word="Nb" sense="原子記号" valsi="jinmrniobi" />
 <nlword word="Nb" sense="元素" valsi="jinmrniobi" />
-<nlword word="Pt" sense="元素" valsi="jinmrplati" />
+<nlword word="Nb" sense="原子記号" valsi="jinmrniobi" />
 <nlword word="Pt" sense="原子記号" valsi="jinmrplati" />
+<nlword word="Pt" sense="元素" valsi="jinmrplati" />
 <nlword word="白金" valsi="jinmrplati" place="1" />
 <nlword word="チタン" valsi="jinmrtitani" place="1" />
 <nlword word="Ti" sense="元素記号" valsi="jinmrtitani" />
@@ -26487,15 +26488,15 @@
 <nlword word="ジャメヴ" sense="jamais-vu" valsi="narprugastcica" />
 <nlword word="ジャメヴュ" sense="jamais-vu" valsi="narprugastcica" />
 <nlword word="未視感" sense="jamais-vu" valsi="narprugastcica" />
-<nlword word="だんな" valsi="nauspe" />
 <nlword word="だんな" sense="男性配偶者" valsi="nauspe" />
-<nlword word="主人" sense="男性配偶者" valsi="nauspe" />
+<nlword word="だんな" valsi="nauspe" />
 <nlword word="主人" valsi="nauspe" />
-<nlword word="亭主" valsi="nauspe" />
+<nlword word="主人" sense="男性配偶者" valsi="nauspe" />
 <nlword word="亭主" sense="男性配偶者" valsi="nauspe" />
+<nlword word="亭主" valsi="nauspe" />
 <nlword word="夫" valsi="nauspe" />
-<nlword word="旦那" sense="男性配偶者" valsi="nauspe" />
 <nlword word="旦那" valsi="nauspe" />
+<nlword word="旦那" sense="男性配偶者" valsi="nauspe" />
 <nlword word="男性配偶者" valsi="nauspe" />
 <nlword word="貴ガス" valsi="navni" />
 <nlword word="鼻" valsi="nazbi" />
@@ -26672,11 +26673,11 @@
 <nlword word="禁欲的" valsi="ro&apos;unai" />
 <nlword word="前提" valsi="ru&apos;a" />
 <nlword word="弱" valsi="ru&apos;e" />
-<nlword word="日本円" sense="日本" valsi="rupnujupuje" />
-<nlword word="日本円" sense="金銭" valsi="rupnujupuje" />
 <nlword word="日本円" sense="貨幣" valsi="rupnujupuje" />
+<nlword word="日本円" sense="金銭" valsi="rupnujupuje" />
 <nlword word="日本円" sense="金融" valsi="rupnujupuje" />
 <nlword word="日本円" sense="通貨" valsi="rupnujupuje" />
+<nlword word="日本円" sense="日本" valsi="rupnujupuje" />
 <nlword word="編集挿入" valsi="sa&apos;a" />
 <nlword word="供給先" valsi="sabji" place="3" />
 <nlword word="供給源" valsi="sabji" place="1" />
@@ -26723,8 +26724,8 @@
 <nlword word="パンツ" sense="下着" valsi="sivypalku" />
 <nlword word="ももひき" sense="下着" valsi="sivypalku" />
 <nlword word="ショーツ" sense="下着" valsi="sivypalku" />
-<nlword word="ステテコ" sense="下着" valsi="sivypalku" />
 <nlword word="ステテコ" valsi="sivypalku" />
+<nlword word="ステテコ" sense="下着" valsi="sivypalku" />
 <nlword word="スパッツ" sense="下着" valsi="sivypalku" />
 <nlword word="ズロース" sense="下着" valsi="sivypalku" />
 <nlword word="パンティ" sense="下着" valsi="sivypalku" />
@@ -26736,8 +26737,8 @@
 <nlword word="ズボン下" sense="下着" valsi="sivypalku" />
 <nlword word="猿股" valsi="sivypalku" />
 <nlword word="猿股" sense="下着" valsi="sivypalku" />
-<nlword word="申又" sense="下着" valsi="sivypalku" />
 <nlword word="申又" valsi="sivypalku" />
+<nlword word="申又" sense="下着" valsi="sivypalku" />
 <nlword word="股引" sense="下着" valsi="sivypalku" />
 <nlword word="スカート" sense="衣服" valsi="skaci" />
 <nlword word="古い" valsi="slabu" place="1" />
