@@ -93,5 +93,5 @@ def make_rafsi_table(format="csv"):
         for row in rafsi_table:
             if len(row) < 4:
                 row.extend(['']*(4-len(row)))
-                writer.writerow(row)
+            writer.writerow(row)
         print("Written: {}.".format(filename))
