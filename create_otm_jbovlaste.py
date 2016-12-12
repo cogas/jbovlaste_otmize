@@ -133,6 +133,7 @@ def relationized_words(dictionary):
                 done_task += 1
                 sys.stdout.write(message.format(done_task, task_block, max_task, cpu))
                 sys.stdout.flush()
+        new_word_list = sorted(new_word_list, key=(lambda word: word.entry.form))
     else:
         for word in dictionary.words:
             future = worker(word, entry_dict)
