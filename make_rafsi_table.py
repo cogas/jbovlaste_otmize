@@ -1,9 +1,11 @@
 # coding=utf-8
-from vlaste_builder import DictionaryBuilder
-from vlaste_manager import DictionaryManager
-from file_dealer import OTMizedJsonDealer
+import csv
+import re
 from collections import defaultdict
-import csv, re
+
+from vlaste_builder import JbovlasteDictionaryBuilder
+from vlaste_manager import DictionaryManager
+from file_dealer import JbovlasteOTMizedJsonDealer
 
 EXCEPT_WORDS = ("lesrxapsurdie", )
 MANUAL_WORDS = {"lelxe": ["lel"]}
@@ -81,8 +83,8 @@ def make_rafsi_table(format="csv"):
         delimiter = ","
     else:
         raise ValueError("not supported.")
-    en_dealer = OTMizedJsonDealer("en")
-    en_dictionary = DictionaryBuilder.load(en_dealer.json)
+    en_dealer = JbovlasteOTMizedJsonDealer("en")
+    en_dictionary = JbovlasteDictionaryBuilder.load(en_dealer.json)
     en_manager = DictionaryManager(en_dictionary)
     rafsi_table = [[key, *rafsis]
                    for key, rafsis in rafsi_collector((en_dictionary,)).items()]
