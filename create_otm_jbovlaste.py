@@ -5,9 +5,8 @@ from time import time
 from multiprocessing import cpu_count
 from collections import OrderedDict, defaultdict
 
-from file_dealer import JbovlasteZipDealer, RawdictDealer, JbovlasteXmlDealer
+from file_dealer import JbovlasteXmlDealer, JbovlasteZipDealer, RawdictDealer 
 from vlaste_builder import (DictionaryBuilder, JbovlasteWordBuilder, Metadata,
-                            Entry, Translation, Content, Relation,
                             WordBuilderForJapanese, ZpDICInfo)
 
 LANG_LIST = ["en", "ja", "jbo", "en-simple"]
@@ -42,31 +41,31 @@ def make_content(valsi, title_name):
                 if title_name == "glossword":
                     word = "- {}".format(word)
                 text_list.append(word)
-        return Content(title_name, text_delimiter.join(text_list))
+        return title_name, text_delimiter.join(text_list)
     else:
         raise ValueError
 
 def make_otmized_word(valsi):
     builder = JbovlasteWordBuilder()
-    builder.set_entry(Entry(int(valsi["definitionid"]), valsi["@word"]))
+    builder.set_entry(int(valsi["definitionid"]), valsi["@word"])
 
     if "selmaho" in valsi.keys():
         selmaho = ": "+valsi["selmaho"]
     else:
         selmaho = ""
-    builder.add_translation(Translation(valsi["@type"]+selmaho, [valsi["definition"]]))
+    builder.add_translation(valsi["@type"]+selmaho, [valsi["definition"]])
 
     if "@unofficial" in valsi.keys():
         builder.add_tag("unofficial")
 
     if "notes" in valsi.keys():
-        builder.add_content(Content("notes", valsi["notes"]))
+        builder.add_content("notes", valsi["notes"])
 
     for title in ("keyword", "glossword", "rafsi"):
         if title in valsi.keys():
-            builder.add_content(make_content(valsi, title))
+            builder.add_content(*make_content(valsi, title))
 
-    builder.add_content(Content("username", valsi["user"]["username"]))
+    builder.add_content("username", valsi["user"]["username"])
     return builder
 
 def make_otmized_dictionary(rawdict, lang, zpdic_data={}):
@@ -158,7 +157,7 @@ def worker(word, entry_dict):
     for potential_word in potential_list:
         for entry in entry_dict[potential_word[0]]:
             if entry.form == potential_word:
-                word.add_relation(Relation("", entry))
+                word.add_relation("", *entry)
                 break
     return word
 
