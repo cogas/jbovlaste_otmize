@@ -87,43 +87,33 @@ class WordBuilder:
         self.variations = WordComponents(Variation)
         self.tags = []
 
-    def add_translation(self, translation):
-        if not isinstance(translation, Translation):
-            raise WordBuildError("translation must be Translation.")
-        self.translations.append(translation)
+    def add_translation(self, title, forms):
+        self.translations.append(Translation(title, forms))
 
-    def add_content(self, content):
-        if not isinstance(content, Content):
-            raise WordBuildError("content must be Content")
-        self.contents.append(content)
+    def add_content(self, title, text):
+        self.contents.append(Content(title, text))
 
-    def add_relation(self, relation):
-        if not isinstance(relation, Relation):
-            raise WordBuildError("relation must be Relation.")
-        self.relations.append(relation)
+    def add_relation(self, title, id_, form):
+        self.relations.append(Relation(title, Entry(id_, form)))
 
-    def add_variation(self, variation):
-        if not isinstance(variation, Variation):
-            raise WordBuildError("variation must be Variation.")
-        self.variations.append(variation)
+    def add_variation(self, title, form):
+        self.variations.append(Variation(title, form))
 
     def add_tag(self, tag):
         self.tags.append(tag)
 
-    def set_entry(self, entry):
-        if not isinstance(entry, Entry):
-            raise WordBuildError("entry must be Entry.")
-        self.entry = entry
+    def set_entry(self, id_, form):
+        self.entry = Entry(id_, form)
 
     def add(self, component):
         if isinstance(component, Translation):
-            self.add_translation(component)
+            self.translations.append(component)
         elif isinstance(component, Content):
-            self.add_content(component)
+            self.contents.append(component)
         elif isinstance(component, Relation):
-            self.add_relation(component)
+            self.relations.append(component)
         elif isinstance(component, Variation):
-            self.add_variation(component)
+            self.variations.append(component)
         elif isinstance(component, Entry):
             self.entry = component
         else:
@@ -196,7 +186,7 @@ class WordBuilderForJapanese(JbovlasteWordBuilder):
                 if keyword == "notes":
                     self.contents.renew("notes", text)
                 else:
-                    self.add_content(Content(keyword, text))
+                    self.add(Content(keyword, text))
         return self
 
     def split_notes(self):
@@ -230,7 +220,7 @@ class WordBuilderForJapanese(JbovlasteWordBuilder):
             examples = re.findall(regex, notes_text)
             if examples:
                 self.contents.renew("notes", re.sub(regex, "", notes_text))
-                self.add_content(Content("用例", "\n".join(examples)))
+                self.add(Content("用例", "\n".join(examples)))
         return self
 
     def integrate_gloss(self):
@@ -242,7 +232,7 @@ class WordBuilderForJapanese(JbovlasteWordBuilder):
                 if pre_gloss not in glosses.split(", "):
                     self.contents.renew("glossword", glosses + ", " + pre_gloss)
             else:
-                self.add_content(Content("glossword", pre_gloss))
+                self.add(Content("glossword", pre_gloss))
             del self.contents[self.contents.find("大意")[0]]
         return self
 
