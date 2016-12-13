@@ -4,6 +4,7 @@ import json
 import os.path
 import xmltodict
 import zipfile
+from exceptions import NotOTMJson
 
 class JbovlasteXmlDealer:
     def __init__(self, lang):
@@ -90,9 +91,11 @@ class OTMizedJsonDealer:
             raise ValueError("{} doesn't exist.".format(filename))
         with open(filename, encoding='utf-8') as f:
             json_dict = json.loads(f.read())
+            print("Loaded.")
+        print("Checking..")
         checker = _OTMChecker(json_dict)
         checker.check()
-        print("Loaded: {}.".format(filename))
+        print("OK: {}.".format(filename))
         self.__json = json_dict
 
     @property
@@ -103,7 +106,7 @@ class OTMizedJsonDealer:
             self.load()
         except Exception as err:
             raise err
-        return self._json
+        return self.__json
 
 
 class JbovlasteOTMizedJsonDealer(OTMizedJsonDealer):
@@ -128,13 +131,13 @@ class _OTMChecker():
     def _words_check(self):
         if 'words' not in self.json.keys():
             raise NotOTMJson("Not have words attribute.")
-        if not isinstance(json_dict["words"], list):
+        if not isinstance(self.json["words"], list):
             raise NotOTMJson("words must be list")
 
     def _word_check(self, word):
-        component_types = ["entry", "translations", "tags",
-                           "contents", "variations", "relations"]
-        if list(word) != component_types:
+        component_types = {"entry", "translations", "tags",
+                           "contents", "variations", "relations"}
+        if set(word) != component_types:
             lacks = [comp_type for comp_type in component_types
                      if comp_type not in list(word)]
             raise NotOTMJson("Attributes lack: {}.".format(word))
@@ -148,7 +151,7 @@ class _OTMChecker():
 
     def _entry_check(self, word):
         ok = True
-        if list(word["entry"]) != ["id", "form"]:
+        if set(word["entry"]) != {"id", "form"}:
             raise NotOTMJson("Entry is broken: {}.".format(word))
         if not isinstance(word["entry"]["id"], int):
             ok = False
@@ -161,12 +164,12 @@ class _OTMChecker():
         err_message = "Translations is broken: {}.".format(word)
         if not isinstance(word["translations"], list):
             raise NotOTMJson(err_message)
-        if list(word["translations"]) != ["title", "forms"]:
-            raise NotOTMJson(err_message)
         for component in word["translations"]:
             err_message_2 = ("Translation is broken: {} in {}."
                              .format(component, word))
             ok = True
+            if set(component) != {"title", "forms"}:
+                raise NotOTMJson(err_message)
             if not isinstance(component["title"], str):
                 ok = False
             if not isinstance(component["forms"], list):
@@ -181,12 +184,12 @@ class _OTMChecker():
         err_message = "Contents is broken: {}.".format(word)
         if not isinstance(word["contents"], list):
             raise NotOTMJson(err_message)
-        if list(word["contents"]) != ["title", "text"]:
-            raise NotOTMJson(err_message)
         for component in word["contents"]:
             err_message_2 = ("Content is broken: {} in {}."
                              .format(component, word))
             ok = True
+            if set(component) != {"title", "text"}:
+                raise NotOTMJson(err_message)
             if not isinstance(component["title"], str):
                 ok = False
             if not isinstance(component["text"], str):
@@ -198,12 +201,12 @@ class _OTMChecker():
         err_message = "Variations is broken: {}.".format(word)
         if not isinstance(word["variations"], list):
             raise NotOTMJson(err_message)
-        if list(word["variations"]) != ["title", "form"]:
-            raise NotOTMJson(err_message)
         for component in word["variations"]:
             err_message_2 = ("Content is broken: {} in {}."
                              .format(component, word))
             ok = True
+            if set(component) != {"title", "form"}:
+                raise NotOTMJson(err_message)
             if not isinstance(component["title"], str):
                 ok = False
             if not isinstance(component["form"], str):
@@ -216,12 +219,12 @@ class _OTMChecker():
         err_message = "Relations is broken: {}.".format(word)
         if not isinstance(word[name], list):
             raise NotOTMJson(err_message)
-        if list(word[name]) != ["title", "entry"]:
-            raise NotOTMJson(err_message)
         for component in word[name]:
             err_message_2 = ("Relation is broken: {} in {}."
                              .format(component, word))
             ok = True
+            if set(component) != {"title", "entry"}:
+                raise NotOTMJson(err_message)
             if not isinstance(component["title"], str):
                 ok = False
             try:

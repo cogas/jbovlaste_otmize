@@ -4,7 +4,7 @@ import re
 import json
 from collections import namedtuple, OrderedDict
 
-from exceptions import (DictionaryBuildError, WordBuildError
+from exceptions import (DictionaryBuildError, WordBuildError,
                         MetadataError, WordComponentsError)
 
 class DictionaryBuilder:

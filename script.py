@@ -1,13 +1,13 @@
 # coding=utf-8
 from vlaste_builder import DictionaryBuilder, JbovlasteWordBuilder
 from vlaste_manager import JbovlasteManager
-from file_dealer import OTMizedJsonDealer
+from file_dealer import JbovlasteOTMizedJsonDealer
 from pprint import pprint
 from random import choice
 from collections import defaultdict
 import re, json
 
-dealer = OTMizedJsonDealer("en")
+dealer = JbovlasteOTMizedJsonDealer("en")
 dictionary = DictionaryBuilder.load(dealer.json, builder=JbovlasteWordBuilder)
 manager = JbovlasteManager(dictionary)
 

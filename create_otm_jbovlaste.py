@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 
-import sys, json, datetime, concurrent.futures,\
-       itertools, copy, re, argparse
+import sys, json, datetime, concurrent.futures, re, argparse
 from time import time
 from multiprocessing import cpu_count
-from file_dealer import ZipDealer, RawdictDealer, JbovlasteXmlDealer
 from collections import OrderedDict, defaultdict
-from vlaste_builder import DictionaryBuilder, JbovlasteWordBuilder, Metadata,\
-                           Entry, Translation, Content, Relation,\
-                           WordBuilderForJapanese, ZpDICInfo
+
+from file_dealer import ZipDealer, RawdictDealer, JbovlasteXmlDealer
+from vlaste_builder import (DictionaryBuilder, JbovlasteWordBuilder, Metadata,
+                            Entry, Translation, Content, Relation,
+                            WordBuilderForJapanese, ZpDICInfo)
 
 LANG_LIST = ["en", "ja", "jbo", "en-simple"]
 
