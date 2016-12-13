@@ -118,7 +118,7 @@ def relationized_words(dictionary):
         message = "\r{}/{} * {} words done, using {} processes."
         cpu = cpu_count()
         futures = set()
-        list_size = max_task // (cpu*1)
+        list_size = 2000 # max_task // (cpu*1)
         done_task = 0
         split_words = [dictionary.words[x:x+list_size] for x in range(0, max_task, list_size)]
         task_block = len(split_words)

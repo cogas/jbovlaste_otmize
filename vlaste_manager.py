@@ -1,5 +1,7 @@
 # coding=utf-8
 from vlaste_builder import DictionaryBuilder, WordComponents, Entry
+from leven import levenshtein
+import re
 
 class DictionaryManager:
     def __init__(self, builder):
@@ -17,39 +19,31 @@ class DictionaryManager:
     def words(self):
         return self.builder.words
 
-    def filter(self, query, *, attr='contents',
-               target='glossword', column='text', partial=True):
-        result = []
-        for word in self.builder.words:
-            components = getattr(word, attr)
-            if isinstance(components, WordComponents):
-                compared_text = getattr(components.find(target)[1], column)
-                if partial and query in compared_text:
-                    result.append(word)
-                elif not partial and query == compared_text:
-                    result.append(word)
-            elif isinstance(components, Entry):
-                if partial and query in getattr(components, target):
-                    result.append(word)
-                elif not partial and query == getattr(components, target):
-                    result.append(word)
-            else:
-                raise TypeError
-        return result
 
-class WordManager:
+class JbovlasteManager(DictionaryManager):
 
-    @staticmethod
-    def entry_eq(word, form):
-        return word.entry.form == form
+    def filter_by_morphology(self, morpho):
+        for word in self.words:
+            if morpho in word.translations[0].title:
+                yield word
 
-    @staticmethod
-    def has_such_content(word, title):
-        return title in word.contents.keys()
-
-    @staticmethod
-    def contains_such_content(word, query, title):
-        if title in word.contents.keys():
-            return query in word.contents.find(title)[1].text
+    def filter_by_spell(self, spell, regex=False):
+        if regex:
+            pattern = re.compile(spell)
+            for word in self.words:
+                    match = pattern.search(word.entry.form)
+                    if match is not None:
+                        yield word
         else:
-            return False
+            for word in self.words:
+                if spell in word.entry.form:
+                    yield word
+
+    def filter_by_levenshtein(self, word_spell, distance, gismu_only=False):
+        if gismu_only:
+            words = self.filter_by_morphology("gismu")
+        else:
+            words = self.words
+        for word in words:
+            if levenshtein(word_spell, word.entry.form) <= distance:
+                yield word

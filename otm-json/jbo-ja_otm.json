@@ -148502,13 +148502,6 @@
       "relations": []
     }
   ],
-  "meta": {
-    "generated_date": "2016-12-13",
-    "lang": {
-      "from": "jbo",
-      "to": "ja"
-    }
-  },
   "zpdic": {
     "alphabetOrder": ".'aAbBcCdDeEfFgGiIjJkKlLmMnNoOpPrRsStTuUvVxXyYzZ",
     "plainInformationTitles": [
@@ -148517,5 +148510,12 @@
       "読み方",
       "語呂合わせ"
     ]
+  },
+  "meta": {
+    "generated_date": "2016-12-13",
+    "lang": {
+      "from": "jbo",
+      "to": "ja"
+    }
   }
 }
