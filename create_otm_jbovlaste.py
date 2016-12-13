@@ -5,7 +5,7 @@ from time import time
 from multiprocessing import cpu_count
 from collections import OrderedDict, defaultdict
 
-from file_dealer import ZipDealer, RawdictDealer, JbovlasteXmlDealer
+from file_dealer import JbovlasteZipDealer, RawdictDealer, JbovlasteXmlDealer
 from vlaste_builder import (DictionaryBuilder, JbovlasteWordBuilder, Metadata,
                             Entry, Translation, Content, Relation,
                             WordBuilderForJapanese, ZpDICInfo)
@@ -106,7 +106,7 @@ def relationized_words(dictionary):
     entry_list = [word.entry for word in dictionary.words]
     letters = ".abcdefgijklmnoprstuvxyz"
     letters += letters[1:].upper()
-    entries_for_dict_creation = copy.deepcopy(entry_list)
+    entries_for_dict_creation = entry_list
     entry_dict = defaultdict(list)
     for letter in letters:
         for i, entry in enumerate(entries_for_dict_creation):
@@ -196,6 +196,6 @@ if __name__ == '__main__':
         dictionary.save(filename)
         print()
     if zippy:
-        zipdealer = ZipDealer(langs)
+        zipdealer = JbovlasteZipDealer(langs)
         zipdealer.zippy()
     print("Success!")

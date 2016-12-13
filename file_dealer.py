@@ -46,7 +46,7 @@ class ZipDealer:
         self.__pathname = pathname
 
     def zippy(self, filenames):
-        with zipfile.ZipFile(self.__zip_path, 'w', zipfile.ZIP_DEFLATED) as zf:
+        with zipfile.ZipFile(self.__pathname, 'w', zipfile.ZIP_DEFLATED) as zf:
             for filename in filenames:
                 zf.write(filename)
             print("Zipped: {}.".format(self.__pathname))
