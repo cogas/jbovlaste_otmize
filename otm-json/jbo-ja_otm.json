@@ -148502,20 +148502,20 @@
       "relations": []
     }
   ],
+  "meta": {
+    "lang": {
+      "to": "ja",
+      "from": "jbo"
+    },
+    "generated_date": "2016-12-13"
+  },
   "zpdic": {
-    "alphabetOrder": ".'aAbBcCdDeEfFgGiIjJkKlLmMnNoOpPrRsStTuUvVxXyYzZ",
     "plainInformationTitles": [
       "username",
       "rafsi",
       "読み方",
       "語呂合わせ"
-    ]
-  },
-  "meta": {
-    "generated_date": "2016-12-13",
-    "lang": {
-      "from": "jbo",
-      "to": "ja"
-    }
+    ],
+    "alphabetOrder": ".'aAbBcCdDeEfFgGiIjJkKlLmMnNoOpPrRsStTuUvVxXyYzZ"
   }
 }

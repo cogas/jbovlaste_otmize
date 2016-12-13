@@ -48215,17 +48215,17 @@
     }
   ],
   "meta": {
-    "generated_date": "2016-12-13",
     "lang": {
-      "from": "jbo",
-      "to": "en-simple"
-    }
+      "to": "en-simple",
+      "from": "jbo"
+    },
+    "generated_date": "2016-12-13"
   },
   "zpdic": {
-    "alphabetOrder": ".'aAbBcCdDeEfFgGiIjJkKlLmMnNoOpPrRsStTuUvVxXyYzZ",
     "plainInformationTitles": [
       "username",
       "rafsi"
-    ]
+    ],
+    "alphabetOrder": ".'aAbBcCdDeEfFgGiIjJkKlLmMnNoOpPrRsStTuUvVxXyYzZ"
   }
 }
