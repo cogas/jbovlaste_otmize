@@ -79,7 +79,7 @@ class Metadata:
 
 
 class WordBuilder:
-    '''Class building a Word object.'''
+    """Class building a Word object."""
     def __init__(self):
         self.translations = WordComponents(Translation)
         self.contents = WordComponents(Content)
@@ -162,7 +162,7 @@ class WordBuilder:
 
 class JbovlasteWordBuilder(WordBuilder):
     def delete_dollar(self):
-        '''definition の $x_n$ を x_n に変える。'''
+        """definition の $x_n$ を x_n に変える。"""
         sentence = self.translations[0].forms[0]
         self.translations[0].forms[0] = sentence.replace("$", "")
         return self
@@ -184,11 +184,11 @@ class JbovlasteWordBuilder(WordBuilder):
 
 
 class WordBuilderForJapanese(JbovlasteWordBuilder):
-    '''Notes内のごたごたを上手く切り分け別に登録するメソッドを独自にもつ。
-    Basically, all you need is call for ``whole_execute`` method! :)'''
+    """Notes内のごたごたを上手く切り分け別に登録するメソッドを独自にもつ。
+    Basically, all you need is call for ``whole_execute`` method! :)"""
 
     def add_split_notes_to_content(self):
-        '''split_notesが返した辞書をもとに word に content を追加する。'''
+        """split_notesが返した辞書をもとに word に content を追加する。"""
         if "notes" in self.contents.keys():
             new_components = self.split_notes()
             # keywords = ["大意", "読み方", "語呂合わせ", "関連語"]
@@ -200,7 +200,7 @@ class WordBuilderForJapanese(JbovlasteWordBuilder):
         return self
 
     def split_notes(self):
-        '''notesをkeywordsごとに分け、それぞれの項目の辞書を返す。'''
+        """notesをkeywordsごとに分け、それぞれの項目の辞書を返す。"""
         keywords = ["大意", "読み方", "語呂合わせ", "関連語"]
         regex_template = r'・\s*(?={}\s*[:：])'
         regex = r'{}|{}|{}|{}'.format(*(regex_template.format(keyword)
@@ -222,8 +222,8 @@ class WordBuilderForJapanese(JbovlasteWordBuilder):
         return dic
 
     def example_extract(self):
-        '''Extract '「…／…」' expressions from notes,
-        adding them to contents as '用例' component'''
+        """Extract '「…／…」' expressions from notes,
+        adding them to contents as '用例' component"""
         regex = r'「[^／]+／[^／]+」'
         if "notes" in self.contents.keys():
             notes_text = self.contents.find("notes")[1].text
@@ -234,7 +234,7 @@ class WordBuilderForJapanese(JbovlasteWordBuilder):
         return self
 
     def integrate_gloss(self):
-        '''Integrate '大意' component with 'glossword' component.'''
+        """Integrate '大意' component with 'glossword' component."""
         if "大意" in self.contents.keys():
             pre_gloss = self.contents.find("大意")[1].text
             if "glossword" in self.contents.keys():
@@ -254,14 +254,14 @@ class WordBuilderForJapanese(JbovlasteWordBuilder):
         return self
 
     def delete_emptynotes(self):
-        '''Delete a notes component with no text.'''
+        """Delete a notes component with no text."""
         cs = self.contents
         if "notes" in cs.keys() and re.search(r'^\s*$', cs.find("notes")[1].text):
             del self.contents[self.contents.find("notes")[0]]
         return self
 
     def whole_execute(self):
-        '''All is done well.'''
+        """All is done well."""
         self.add_split_notes_to_content().example_extract()
         self.integrate_gloss().sort_contents().delete_emptynotes()
         return self
@@ -273,8 +273,8 @@ Content = namedtuple("Content", "title text")
 Variation = namedtuple("Variation", "title form")
 
 class Relation:
-    '''mostly same with namedtuple,
-    except that ``_asdict`` method works well for Entry object.'''
+    """mostly same with namedtuple,
+    except that ``_asdict`` method works well for Entry object."""
     def __init__(self, title, entry):
         self._title = title
         self._entry = entry
@@ -318,8 +318,8 @@ class WordComponents(list):
         self[self.find(title)[0]] = self.__type(title, new_value)
 
     def sort_bytitle(self, titles):
-        '''titlesの順に並べる。インプレースであることに注意。
-        titlesに記載のないtitleをもつ要素はその順番を保持したまま後方に寄る。'''
+        """titlesの順に並べる。インプレースであることに注意。
+        titlesに記載のないtitleをもつ要素はその順番を保持したまま後方に寄る。"""
         titles.reverse()
         for title in titles:
             if title in self.keys():
