@@ -1,19 +1,11 @@
 # coding=utf-8
 
+import re
+import json
 from collections import namedtuple, OrderedDict
-import re, json
 
-class DictionaryBuildError(Exception):
-    pass
-
-class WordBuildError(Exception):
-    pass
-
-class MetadataError(Exception):
-    pass
-
-class WordComponentsError(Exception):
-    pass
+from exceptions import (DictionaryBuildError, WordBuildError
+                        MetadataError, WordComponentsError)
 
 class DictionaryBuilder:
     def __init__(self):
