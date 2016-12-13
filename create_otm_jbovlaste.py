@@ -6,7 +6,7 @@ from time import time
 from multiprocessing import cpu_count
 from file_dealer import ZipDealer, RawdictDealer, JbovlasteXmlDealer
 from collections import OrderedDict, defaultdict
-from vlaste_builder import DictionaryBuilder, WordBuilder, Metadata,\
+from vlaste_builder import DictionaryBuilder, JbovlasteWordBuilder, Metadata,\
                            Entry, Translation, Content, Relation,\
                            WordBuilderForJapanese, ZpDICInfo
 
@@ -47,7 +47,7 @@ def make_content(valsi, title_name):
         raise ValueError
 
 def make_otmized_word(valsi):
-    builder = WordBuilder()
+    builder = JbovlasteWordBuilder()
     builder.set_entry(Entry(int(valsi["definitionid"]), valsi["@word"]))
 
     if "selmaho" in valsi.keys():

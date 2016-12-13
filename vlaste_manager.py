@@ -19,14 +19,6 @@ class DictionaryManager:
     def words(self):
         return self.builder.words
 
-
-class JbovlasteManager(DictionaryManager):
-
-    def filter_by_morphology(self, morpho):
-        for word in self.words:
-            if morpho in word.translations[0].title:
-                yield word
-
     def filter_by_spell(self, spell, regex=False):
         if regex:
             pattern = re.compile(spell)
@@ -39,11 +31,17 @@ class JbovlasteManager(DictionaryManager):
                 if spell in word.entry.form:
                     yield word
 
-    def filter_by_levenshtein(self, word_spell, distance, gismu_only=False):
-        if gismu_only:
-            words = self.filter_by_morphology("gismu")
-        else:
-            words = self.words
+    def filter_by_levenshtein(self, word_spell, distance):
+        words = self.words
         for word in words:
             if levenshtein(word_spell, word.entry.form) <= distance:
                 yield word
+
+    def filter_by_morphology(self, morpho):
+        for word in self.words:
+            if morpho in word.translations[0].title:
+                yield word
+
+
+class JbovlasteManager(DictionaryManager):
+    ...

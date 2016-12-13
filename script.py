@@ -1,29 +1,28 @@
 # coding=utf-8
-from vlaste_builder import DictionaryBuilder
+from vlaste_builder import DictionaryBuilder, JbovlasteWordBuilder
 from vlaste_manager import JbovlasteManager
 from file_dealer import OTMizedJsonDealer
 from pprint import pprint
 from random import choice
 from collections import defaultdict
-import re
-import json
+import re, json
 
 dealer = OTMizedJsonDealer("en")
-dictionary = DictionaryBuilder.load(dealer.json)
+dictionary = DictionaryBuilder.load(dealer.json, builder=JbovlasteWordBuilder)
 manager = JbovlasteManager(dictionary)
-gismu_manager = JbovlasteManager(dictionary)
-gismu_manager.builder.words = list(manager.filter_by_morphology("gismu"))
 
-for _ in range(10):
-    gismu = choice(gismu_manager.words).entry.form
+for _ in range(20):
+    gismu = choice(list(manager.filter_by_morphology("gismu"))).entry.form
     levens = [word.entry.form for word
-              in manager.filter_by_levenshtein(gismu, 1, gismu_only=True)]
+              in manager.filter_by_levenshtein(gismu, 1)]
     print("{}: {}".format(gismu, levens))
 
-def aaa():
+print(list(manager.filter_by_spell(".onji"))[0].keywords())
+
+def make_leven_dict():
     leven_dict = defaultdict(list)
     for gismu in gismu_liste:
         gismu = gismu.entry.form
         levens = [word.entry.form for word
-                  in manager.filter_by_levenshtein(gismu, 1, gismu_only=True)]
+                  in manager.filter_by_levenshtein(gismu, 1)]
         leven_dict[len(levens)].append((gismu, levens))

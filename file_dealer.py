@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 import xmltodict, json, zipfile
 
+"""全体的に jbovlaste 仕様になってしまってるので、
+もう少し一般化したクラスにしたい"""
+
 class JbovlasteXmlDealer:
     def __init__(self, lang):
         self.__has_dict = False
@@ -86,3 +89,15 @@ class OTMizedJsonDealer:
         if not hasattr(self, "_OTMizedJsonDealer__json"):
             self.load()
         return self.__json
+
+    @classmethod
+    def load_from_filename(cls, filename):
+        dealer = cls(None)
+        if os.path.exists(filename):
+            with open(filename, encoding='utf-8') as f:
+                json_dict = json.loads(f.read())
+                print("Loaded {}".format(filename))
+        else:
+            raise ValueError("{} doesn't exist.".format(filename))
+        dealer.__json = json_dict
+        return dealer

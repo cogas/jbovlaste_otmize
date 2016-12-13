@@ -49,9 +49,11 @@ class DictionaryBuilder:
             print("Written to {}.".format(filename))
 
     @classmethod
-    def load(cls, otmized_json):
+    def load(cls, otmized_json, builder=None):
+        if builder is None:
+            builder = WordBuilder
         result = cls()
-        result.words.extend([WordBuilder.load(word) for word in otmized_json["words"]])
+        result.words.extend([builder.load(word) for word in otmized_json["words"]])
         result.__metadata = {key: otmized_json[key] for key in otmized_json.keys()
                            if key != "words"}
         return result
@@ -162,17 +164,34 @@ class WordBuilder:
                                  for relation in dic["relations"]])
         return result
 
+    def __repr__(self):
+        return "<WordBuilder: {}>".format(self.entry)
+
+
+class JbovlasteWordBuilder(WordBuilder):
     def delete_dollar(self):
         '''definition の $x_n$ を x_n に変える。'''
         sentence = self.translations[0].forms[0]
         self.translations[0].forms[0] = sentence.replace("$", "")
         return self
 
-    def __repr__(self):
-        return "<WordBuilder: {}>".format(self.entry)
+    def glosswords(self):
+        if 'glossword' not in self.contents.keys():
+            return []
+        glosses_text = self.contents.find('glossword')[1].text
+        glosses = glosses_text.split("\n")
+        return [gloss.strip("- ") for gloss in glosses]
+
+    def keywords(self):
+        if 'keyword' not in self.contents.keys():
+            return []
+        glosses_text = self.contents.find('keyword')[1].text
+        glosses = glosses_text.split("\n")
+        return {i: re.sub(r"^\[\d\]: ", "", gloss)
+                for i, gloss in enumerate(glosses, 1)}
 
 
-class WordBuilderForJapanese(WordBuilder):
+class WordBuilderForJapanese(JbovlasteWordBuilder):
     '''Notes内のごたごたを上手く切り分け別に登録するメソッドを独自にもつ。
     Basically, all you need is call for ``whole_execute`` method! :)'''
 
