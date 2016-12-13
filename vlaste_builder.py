@@ -7,11 +7,12 @@ from collections import namedtuple, OrderedDict
 from exceptions import (DictionaryBuildError, WordBuildError,
                         MetadataError, WordComponentsError)
 
+
 class DictionaryBuilder:
     def __init__(self):
         self.words = []
 
-    def append(self, word):
+    def append(self, word: str) -> None:
         if isinstance(word, WordBuilder):
             self.words.append(word)
         else:
@@ -45,10 +46,13 @@ class DictionaryBuilder:
         if builder is None:
             builder = WordBuilder
         result = cls()
-        result.words.extend([builder.load(word) for word in otmized_json["words"]])
-        result.__metadata = {key: otmized_json[key] for key in otmized_json.keys()
-                           if key != "words"}
+        result.words.extend([builder.load(word)
+                             for word in otmized_json["words"]])
+        result.__metadata = {key: otmized_json[key]
+                             for key in otmized_json.keys()
+                             if key != "words"}
         return result
+
 
 class Metadata:
     def __init__(self, zpdic=True):
@@ -138,11 +142,14 @@ class WordBuilder:
     def load(cls, dic):
         result = cls()
         result.entry = Entry(dic["entry"]["id"], dic["entry"]["form"])
-        result.translations.extend([Translation(**trsl) for trsl in dic["translations"]])
+        result.translations.extend([Translation(**trsl)
+                                    for trsl in dic["translations"]])
         result.tags = dic["tags"]
         result.contents.extend([Content(**cnt) for cnt in dic["contents"]])
-        result.variations.extend([Variation(**var) for var in dic["variations"]])
-        result.relations.extend([Relation(relation["title"], Entry(**relation["entry"]))
+        result.variations.extend([Variation(**var)
+                                  for var in dic["variations"]])
+        result.relations.extend([Relation(relation["title"],
+                                          Entry(**relation["entry"]))
                                  for relation in dic["relations"]])
         return result
 
@@ -194,7 +201,7 @@ class WordBuilderForJapanese(JbovlasteWordBuilder):
         keywords = ["大意", "読み方", "語呂合わせ", "関連語"]
         regex_template = r'・\s*(?={}\s*[:：])'
         regex = r'{}|{}|{}|{}'.format(*(regex_template.format(keyword)
-                                       for keyword in keywords))
+                                        for keyword in keywords))
         regex_template2 = r'{}\s*[:：]\s*'
         if "notes" not in self.contents.keys():
             return {}
@@ -230,7 +237,8 @@ class WordBuilderForJapanese(JbovlasteWordBuilder):
             if "glossword" in self.contents.keys():
                 glosses = self.contents.find("glossword")[1].text
                 if pre_gloss not in glosses.split(", "):
-                    self.contents.renew("glossword", glosses + ", " + pre_gloss)
+                    self.contents.renew("glossword",
+                                        glosses + ", " + pre_gloss)
             else:
                 self.add(Content("glossword", pre_gloss))
             del self.contents[self.contents.find("大意")[0]]
@@ -239,14 +247,15 @@ class WordBuilderForJapanese(JbovlasteWordBuilder):
     def sort_contents(self):
         # 大意 は gloss に統合している。
         sorting = ["notes", "読み方", "glossword", "keyword", "用例",
-        "語呂合わせ", "関連語", "rafsi", "username"]
+                   "語呂合わせ", "関連語", "rafsi", "username"]
         self.contents.sort_bytitle(sorting)
         return self
 
     def delete_emptynotes(self):
         """Delete a notes component with no text."""
         cs = self.contents
-        if "notes" in cs.keys() and re.search(r'^\s*$', cs.find("notes")[1].text):
+        if ("notes" in cs.keys() and
+                re.search(r'^\s*$', cs.find("notes")[1].text)):
             del self.contents[self.contents.find("notes")[0]]
         return self
 
@@ -256,11 +265,11 @@ class WordBuilderForJapanese(JbovlasteWordBuilder):
         self.integrate_gloss().sort_contents().delete_emptynotes()
         return self
 
-
 Entry = namedtuple("Entry", "id form")
 Translation = namedtuple("Translation", "title forms")
 Content = namedtuple("Content", "title text")
 Variation = namedtuple("Variation", "title form")
+
 
 class Relation:
     """mostly same with namedtuple,
@@ -288,7 +297,8 @@ class WordComponents(list):
 
     def append(self, component):
         if not isinstance(component, self.__type):
-            raise WordComponentsError("component must be {}.".format(self.__type))
+            raise WordComponentsError("component must be {}."
+                                      .format(self.__type))
         else:
             super().append(component)
 
@@ -320,8 +330,10 @@ class WordComponents(list):
     def build(self):
         return [component._asdict() for component in self]
 
+
 class ZpDICInfo:
     DEFAULT_ALPHABET_ORDER = ".'aAbBcCdDeEfFgGiIjJkKlLmMnNoOpPrRsStTuUvVxXyYzZ"
+
     def __init__(self, lang):
         self.__lang = lang
         self.alphabetOrder()
