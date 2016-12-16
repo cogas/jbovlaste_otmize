@@ -10,6 +10,7 @@ from file_dealer import JbovlasteOTMizedJsonDealer
 EXCEPT_WORDS = ("lesrxapsurdie", )
 MANUAL_WORDS = {"lelxe": ["lel"]}
 
+
 def rafsi_collector(dictionaries):
     rafsi_table = defaultdict(set)
     for dictionary in dictionaries:
@@ -24,6 +25,7 @@ def rafsi_collector(dictionaries):
                 rafsi_set = word.contents.find('rafsi')[1].text.split()
                 rafsi_table[key].update(rafsi_set)
     return rafsi_table
+
 
 def rafsi_detector(word):
     '''detect potential rafsi from notes in word. DIRTY!!! .oisai
@@ -69,12 +71,14 @@ def rafsi_detector(word):
     else:
         return []
 
+
 def sort_key(row):
     word = row[0]
     if word[0] == '*':
         return word[1:]
     else:
         return word
+
 
 def make_rafsi_table(format="csv"):
     if format == "tsv":
@@ -86,8 +90,8 @@ def make_rafsi_table(format="csv"):
     en_dealer = JbovlasteOTMizedJsonDealer("en")
     en_dictionary = JbovlasteDictionaryBuilder.load(en_dealer.json)
     en_manager = DictionaryManager(en_dictionary)
-    rafsi_table = [[key, *rafsis]
-                   for key, rafsis in rafsi_collector((en_dictionary,)).items()]
+    rafsi_dict = rafsi_collector((en_dictionary,)).items()
+    rafsi_table = [[key, *rafsis] for key, rafsis in rafsi_dict]
     rafsi_table = sorted(rafsi_table, key=sort_key)
     filename = 'rafsi_table/rafsi_table.' + format
     with open(filename, "w", newline='', encoding='utf-8') as file:
