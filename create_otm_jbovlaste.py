@@ -91,7 +91,7 @@ def make_otmized_dictionary(rawdict, lang, zpdic_data={}):
     return dictionary_builder
 
 
-def dictionary_customize(dictionary, nodollar, addrelations):
+def dictionary_customize(dictionary, args):
 
     if dictionary.metadata.langdata["to"] == "ja":
         dictionary.words = [WordBuilderForJapanese.load(word.build())
@@ -100,14 +100,14 @@ def dictionary_customize(dictionary, nodollar, addrelations):
     for word in dictionary.words:
         if dictionary.metadata.langdata["to"] == "ja":
             word.whole_execute()
-        if nodollar:
+        if args.nodollar:
             word.delete_dollar()
         # if you wanna keep glossword in contents, comment-out the block below.
-        if word.glosswords():
+        if args.keepgloss and word.glosswords():
             word.add_translation("gloss", word.glosswords())
             del word.contents[word.contents.find('glossword')[0]]
 
-    if addrelations:
+    if args.addrelations:
         dictionary.words = relationized_words(dictionary)
 
     return dictionary
@@ -190,8 +190,6 @@ def worker_for_plural(words, entry_dict):
         result.append(worker(word, entry_dict))
     return result
 
-# -------------------------
-
 
 def handle_commandline():
     parser = argparse.ArgumentParser()
@@ -200,29 +198,35 @@ def handle_commandline():
     parser.add_argument("--nodollar", action='store_true')
     parser.add_argument("--addrelations", action='store_true')
     parser.add_argument("--output", "-o", nargs='?', default='otm-json/')
+    parser.add_argument("--keepgloss", action='store_false')
+    parser.add_argument("--test", action='store_true')
     args = parser.parse_args()
-    return (args.language, args.nodollar,
-            args.addrelations, args.zip, args.output)
+    return args
 
 
-def create_dictionary(lang, nodollar, addrelations):
+def create_dictionary(lang, args):
     rawdict_dealer = RawdictDealer(lang)
     rawdict = rawdict_dealer.load()
     zpdic = ZpDICInfo(lang)
     zpdic.set_by_lang()
     dictionary = make_otmized_dictionary(rawdict, lang,
                                          zpdic_data=zpdic.build())
-    return dictionary_customize(dictionary, nodollar, addrelations)
+    return dictionary_customize(dictionary, args)
 
 if __name__ == '__main__':
-    langs, nodollar, addrelations, zippy, output = handle_commandline()
+    args = handle_commandline()
+    langs = args.language
+    output = args.output
     filename_temp = '{}jbo-{}_otm.json'.format(output, '{}')
     for lang in langs:
         filename = filename_temp.format(lang)
-        dictionary = create_dictionary(lang, nodollar, addrelations)
+        dictionary = create_dictionary(lang, args)
+    if args.test:
+        print('This is test. Dictionary data is not saved.')
+    else:
         dictionary.save(filename)
-        print()
-    if zippy:
+    print()
+    if args.zip:
         zipdealer = JbovlasteZipDealer(langs)
         zipdealer.zippy()
     print("Success!")
