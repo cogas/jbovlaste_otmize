@@ -6,6 +6,7 @@ import xmltodict
 import zipfile
 from exceptions import NotOTMJson
 
+
 class JbovlasteXmlDealer:
     def __init__(self, lang):
         self.__has_dict = False
@@ -75,7 +76,8 @@ class RawdictDealer:
                 rawdict = json.loads(f.read())
                 print("Loaded {}".format(filename))
         else:
-            print("file '{}' doesn't exist. Generating from xml file.".format(filename))
+            print("file '{}' doesn't exist. Generating from xml file."
+                  .format(filename))
             xml_dealer = JbovlasteXmlDealer(self.__lang)
             rawdict, _ = xml_dealer.make_dict()
             print("OK, loaded.")
@@ -110,9 +112,9 @@ class OTMizedJsonDealer:
 
 
 class JbovlasteOTMizedJsonDealer(OTMizedJsonDealer):
-    def __init__(self, lang):
+    def __init__(self, lang, directory='otm-json/'):
         self.__lang = lang
-        self.__filename = 'otm-json/jbo-{}_otm.json'.format(self.__lang)
+        self.__filename = directory + 'jbo-{}_otm.json'.format(self.__lang)
 
     def load(self):
         super().load(self.__filename)
