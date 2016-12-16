@@ -102,6 +102,7 @@ def dictionary_customize(dictionary, nodollar, addrelations):
             word.whole_execute()
         if nodollar:
             word.delete_dollar()
+        # if you wanna keep glossword in contents, comment-out the block below.
         if word.glosswords():
             word.add_translation("gloss", word.glosswords())
             del word.contents[word.contents.find('glossword')[0]]
@@ -163,8 +164,8 @@ def relationized_words(dictionary):
 
 
 def worker(word, entry_dict):
-    '''r"{[a-zA-Z']}" に該当する単語のうち、エントリーのあるものだけを relations に加える。
-    "ja" の場合「関連語」も対象にする。'''
+    """r"{[a-zA-Z']}" に該当する単語のうち、エントリーのあるものだけを relations に加える。
+    "ja" の場合「関連語」も対象にする。"""
     regex = r"\{[.a-zA-Z']+\}"
     potential_list = []
     if "notes" in word.contents.keys():
