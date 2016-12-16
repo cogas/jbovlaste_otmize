@@ -72,8 +72,6 @@ def make_otmized_word(valsi):
         if title in valsi.keys():
             builder.add_content(*make_content(valsi, title))
 
-    builder.add_translation("gloss", builder.glosswords())
-
     builder.add_content("username", valsi["user"]["username"])
     return builder
 
@@ -104,6 +102,9 @@ def dictionary_customize(dictionary, nodollar, addrelations):
             word.whole_execute()
         if nodollar:
             word.delete_dollar()
+        if word.glosswords():
+            word.add_translation("gloss", word.glosswords())
+            del word.contents[word.contents.find('glossword')[0]]
 
     if addrelations:
         dictionary.words = relationized_words(dictionary)
