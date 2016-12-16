@@ -171,6 +171,14 @@ class JbovlasteWordBuilder(WordBuilder):
         glosses = glosses_text.split("\n")
         return [gloss.strip("- ") for gloss in glosses]
 
+    def add_glossword(self, glossword):
+        if 'glossword' in self.contents.keys():
+            glosses_text = self.contents.find('glossword')[1].text
+            glosses_text = '\n' + '- ' + glossword
+            self.contents.renew('glossword', glosses_text)
+        else:
+            self.contents.append(Content('glossword', '- ' + glossword))
+
     def keywords(self):
         if 'keyword' not in self.contents.keys():
             return []
@@ -236,9 +244,8 @@ class WordBuilderForJapanese(JbovlasteWordBuilder):
             pre_gloss = self.contents.find("大意")[1].text
             if "glossword" in self.contents.keys():
                 glosses = self.contents.find("glossword")[1].text
-                if pre_gloss not in glosses.split(", "):
-                    self.contents.renew("glossword",
-                                        glosses + ", " + pre_gloss)
+                if pre_gloss not in self.glosswords():
+                    self.add_glossword(pre_gloss)
             else:
                 self.add(Content("glossword", pre_gloss))
             del self.contents[self.contents.find("大意")[0]]
