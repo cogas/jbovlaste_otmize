@@ -1,15 +1,21 @@
 # -*- coding: utf-8 -*-
 
-import sys, json, datetime, concurrent.futures, re, argparse
+import argparse
+import concurrent.futures
+import datetime
+import json
+import re
+import sys
 from time import time
 from multiprocessing import cpu_count
 from collections import OrderedDict, defaultdict
 
-from file_dealer import JbovlasteXmlDealer, JbovlasteZipDealer, RawdictDealer 
+from file_dealer import JbovlasteXmlDealer, JbovlasteZipDealer, RawdictDealer
 from vlaste_builder import (DictionaryBuilder, JbovlasteWordBuilder, Metadata,
                             WordBuilderForJapanese, ZpDICInfo)
 
 LANG_LIST = ["en", "ja", "jbo", "en-simple"]
+
 
 def make_content(valsi, title_name):
     if title_name in ('keyword', 'glossword'):
@@ -45,6 +51,7 @@ def make_content(valsi, title_name):
     else:
         raise ValueError
 
+
 def make_otmized_word(valsi):
     builder = JbovlasteWordBuilder()
     builder.set_entry(int(valsi["definitionid"]), valsi["@word"])
@@ -65,8 +72,11 @@ def make_otmized_word(valsi):
         if title in valsi.keys():
             builder.add_content(*make_content(valsi, title))
 
+    builder.add_translation("gloss", builder.glosswords())
+
     builder.add_content("username", valsi["user"]["username"])
     return builder
+
 
 def make_otmized_dictionary(rawdict, lang, zpdic_data={}):
     dictionary_builder = DictionaryBuilder()
@@ -81,6 +91,7 @@ def make_otmized_dictionary(rawdict, lang, zpdic_data={}):
     dictionary_builder.metadata = metadata
 
     return dictionary_builder
+
 
 def dictionary_customize(dictionary, nodollar, addrelations):
 
@@ -98,6 +109,7 @@ def dictionary_customize(dictionary, nodollar, addrelations):
         dictionary.words = relationized_words(dictionary)
 
     return dictionary
+
 
 def relationized_words(dictionary):
     print('add relations...')
@@ -117,9 +129,10 @@ def relationized_words(dictionary):
         message = "\r{}/{} * {} words done, using {} processes."
         cpu = cpu_count()
         futures = set()
-        list_size = 2000 # max_task // (cpu*1)
+        list_size = 2000
         done_task = 0
-        split_words = [dictionary.words[x:x+list_size] for x in range(0, max_task, list_size)]
+        split_words = [dictionary.words[x:x+list_size]
+                       for x in range(0, max_task, list_size)]
         task_block = len(split_words)
         with concurrent.futures.ProcessPoolExecutor(max_workers=cpu) as executor:
             sys.stdout.write(message.format(0, task_block, max_task, cpu))
@@ -130,19 +143,23 @@ def relationized_words(dictionary):
             for future in concurrent.futures.as_completed(futures):
                 new_word_list.extend(future.result())
                 done_task += 1
-                sys.stdout.write(message.format(done_task, task_block, max_task, cpu))
+                sys.stdout.write(message.format(done_task, task_block,
+                                                max_task, cpu))
                 sys.stdout.flush()
-        new_word_list = sorted(new_word_list, key=(lambda word: word.entry.form))
+        new_word_list = sorted(new_word_list,
+                               key=(lambda word: word.entry.form))
     else:
         for word in dictionary.words:
             future = worker(word, entry_dict)
             new_word_list.append(future)
             done_task = len(new_word_list)
-            sys.stdout.write("\r{}/{} words done, using 1 process.".format(done_task, max_task))
+            sys.stdout.write("\r{}/{} words done, using 1 process."
+                             .format(done_task, max_task))
             sys.stdout.flush()
     end = time()
     print(" ({:.1f} sec.)".format(end-start))
     return new_word_list
+
 
 def worker(word, entry_dict):
     '''r"{[a-zA-Z']}" に該当する単語のうち、エントリーのあるものだけを relations に加える。
@@ -150,16 +167,20 @@ def worker(word, entry_dict):
     regex = r"\{[.a-zA-Z']+\}"
     potential_list = []
     if "notes" in word.contents.keys():
-        potential_list.extend(re.findall(regex, word.contents.find("notes")[1].text))
+        potential_list.extend(re.findall(regex,
+                                         word.contents.find("notes")[1].text))
     if "関連語" in word.contents.keys():
-        potential_list.extend(re.findall(regex, word.contents.find("関連語")[1].text))
-    potential_list = [re.sub(r'^[^.a-zA-Z]+', '', re.sub(r'[^.a-zA-Z]+$', '', w)) for w in potential_list]
+        potential_list.extend(re.findall(regex,
+                                         word.contents.find("関連語")[1].text))
+    regex = "|".join([r'^[^.a-zA-Z]+', r'[^.a-zA-Z]+$'])
+    potential_list = [re.sub(regex, '', w) for w in potential_list]
     for potential_word in potential_list:
         for entry in entry_dict[potential_word[0]]:
             if entry.form == potential_word:
                 word.add_relation("", *entry)
                 break
     return word
+
 
 def worker_for_plural(words, entry_dict):
     result = []
@@ -169,26 +190,31 @@ def worker_for_plural(words, entry_dict):
 
 # -------------------------
 
+
 def handle_commandline():
     parser = argparse.ArgumentParser()
     parser.add_argument("language", choices=LANG_LIST, nargs='+')
     parser.add_argument("--zip", action='store_true')
     parser.add_argument("--nodollar", action='store_true')
     parser.add_argument("--addrelations", action='store_true')
+    parser.add_argument("--output", "-o", nargs='?', default='otm-json/')
     args = parser.parse_args()
-    return args.language, args.nodollar, args.addrelations, args.zip
+    return (args.language, args.nodollar,
+            args.addrelations, args.zip, args.output)
+
 
 def create_dictionary(lang, nodollar, addrelations):
     rawdict_dealer = RawdictDealer(lang)
     rawdict = rawdict_dealer.load()
     zpdic = ZpDICInfo(lang)
     zpdic.set_by_lang()
-    dictionary = make_otmized_dictionary(rawdict, lang, zpdic_data=zpdic.build())
+    dictionary = make_otmized_dictionary(rawdict, lang,
+                                         zpdic_data=zpdic.build())
     return dictionary_customize(dictionary, nodollar, addrelations)
 
 if __name__ == '__main__':
-    langs, nodollar, addrelations, zippy = handle_commandline()
-    filename_temp = 'otm-json/jbo-{}_otm.json'
+    langs, nodollar, addrelations, zippy, output = handle_commandline()
+    filename_temp = '{}jbo-{}_otm.json'.format(output, '{}')
     for lang in langs:
         filename = filename_temp.format(lang)
         dictionary = create_dictionary(lang, nodollar, addrelations)
