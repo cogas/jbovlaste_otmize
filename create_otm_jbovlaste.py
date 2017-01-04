@@ -13,6 +13,7 @@ from collections import OrderedDict, defaultdict
 from file_dealer import JbovlasteXmlDealer, JbovlasteZipDealer, RawdictDealer
 from vlaste_builder import (DictionaryBuilder, JbovlasteWordBuilder, Metadata,
                             WordBuilderForJapanese, ZpDICInfo)
+import relationize
 
 LANG_LIST = ["en", "ja", "jbo", "en-simple"]
 
@@ -113,82 +114,15 @@ def dictionary_customize(dictionary, args):
     return dictionary
 
 
-def relationized_words(dictionary):
-    print('add relations...')
+def relationized_words(dictionary, strategy=None):
+    print('relationizing...')
+    if stragety is None:
+        strategy = relationize.default_relationize
     start = time()
-    entry_list = [word.entry for word in dictionary.words]
-    letters = ".abcdefgijklmnoprstuvxyz"
-    letters += letters[1:].upper()
-    entries_for_dict_creation = entry_list
-    entry_dict = defaultdict(list)
-    for letter in letters:
-        for i, entry in enumerate(entries_for_dict_creation):
-            if entry.form[0] == letter:
-                entry_dict[letter].append(entry)
-    new_word_list = []
-    max_task = len(dictionary.words)
-    if max_task >= 6000:
-        message = "\r{}/{} * {} words done, using {} processes."
-        cpu = cpu_count()
-        futures = set()
-        list_size = 2000
-        done_task = 0
-        split_words = [dictionary.words[x:x+list_size]
-                       for x in range(0, max_task, list_size)]
-        task_block = len(split_words)
-        with concurrent.futures.ProcessPoolExecutor(max_workers=cpu) as executor:
-            sys.stdout.write(message.format(0, task_block, max_task, cpu))
-            sys.stdout.flush()
-            for words in split_words:
-                future = executor.submit(worker_for_plural, words, entry_dict)
-                futures.add(future)
-            for future in concurrent.futures.as_completed(futures):
-                new_word_list.extend(future.result())
-                done_task += 1
-                sys.stdout.write(message.format(done_task, task_block,
-                                                max_task, cpu))
-                sys.stdout.flush()
-        new_word_list = sorted(new_word_list,
-                               key=(lambda word: word.entry.form))
-    else:
-        for word in dictionary.words:
-            future = worker(word, entry_dict)
-            new_word_list.append(future)
-            done_task = len(new_word_list)
-            sys.stdout.write("\r{}/{} words done, using 1 process."
-                             .format(done_task, max_task))
-            sys.stdout.flush()
+    new_word_list = strategy(dictionary)
     end = time()
     print(" ({:.1f} sec.)".format(end-start))
     return new_word_list
-
-
-def worker(word, entry_dict):
-    """r"{[a-zA-Z']}" に該当する単語のうち、エントリーのあるものだけを relations に加える。
-    "ja" の場合「関連語」も対象にする。"""
-    regex = r"\{[.a-zA-Z']+\}"
-    potential_list = []
-    if "notes" in word.contents.keys():
-        potential_list.extend(re.findall(regex,
-                                         word.contents.find("notes")[1].text))
-    if "関連語" in word.contents.keys():
-        potential_list.extend(re.findall(regex,
-                                         word.contents.find("関連語")[1].text))
-    regex = "|".join([r'^[^.a-zA-Z]+', r'[^.a-zA-Z]+$'])
-    potential_list = [re.sub(regex, '', w) for w in potential_list]
-    for potential_word in potential_list:
-        for entry in entry_dict[potential_word[0]]:
-            if entry.form == potential_word:
-                word.add_relation("", *entry)
-                break
-    return word
-
-
-def worker_for_plural(words, entry_dict):
-    result = []
-    for word in words:
-        result.append(worker(word, entry_dict))
-    return result
 
 
 def handle_commandline():
