@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
 
 import argparse
-import concurrent.futures
 import datetime
 import json
 import re
 import sys
 from time import time
-from multiprocessing import cpu_count
 from collections import OrderedDict, defaultdict
 
 from file_dealer import JbovlasteXmlDealer, JbovlasteZipDealer, RawdictDealer
@@ -109,14 +107,15 @@ def dictionary_customize(dictionary, args):
             del word.contents[word.contents.find('glossword')[0]]
 
     if args.addrelations:
-        dictionary.words = relationized_words(dictionary)
+        dictionary.words = relationized_words(dictionary,
+                                              relationize.nightly_relationize)
 
     return dictionary
 
 
 def relationized_words(dictionary, strategy=None):
     print('relationizing...')
-    if stragety is None:
+    if strategy is None:
         strategy = relationize.default_relationize
     start = time()
     new_word_list = strategy(dictionary)

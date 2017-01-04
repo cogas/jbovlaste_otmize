@@ -1,6 +1,10 @@
 # coding=utf-8
-
+import concurrent.futures
 import multiprocessing
+import re
+import sys
+from multiprocessing import cpu_count
+from collections import defaultdict
 
 
 def default_prepare(dictionary):
@@ -42,13 +46,14 @@ def default_relationize(dictionary):
         for words in split_words:
             future = executor.submit(bulk_worker, words, entry_dict)
             futures.add(future)
+        progress_print(0, max_task, cpu)
         for future in concurrent.futures.as_completed(futures):
             for word in future.result():
                 results.add(word)
             done_task = len(results)
             progress_print(done_task, max_task, cpu)
 
-    return results = sorted(list(results), key=(lambda word: word.entry.form))
+    results = sorted(list(results), key=(lambda word: word.entry.form))
 
     assert(len(results) == len(dictionary.words))
     return results
@@ -58,31 +63,39 @@ def nightly_relationize(dictionary):
     entry_dict = default_prepare(dictionary)
     jobs = multiprocessing.JoinableQueue()
     results = multiprocessing.Queue()
+    errors = multiprocessing.Queue()
+    concurrency = cpu_count()
     for word in dictionary.words:
         jobs.put(word)
-
     max_task = jobs.qsize()
-    concurrency = cpu_count()
+    print(max_task)
 
     for _ in range(concurrency):
         process = multiprocessing.Process(target=worker,
-                                          args=(entry_dict, jobs, results))
+                                          args=(entry_dict, jobs,
+                                                results, errors))
         process.daemon = True
         process.start()
 
-    while True:
-        for word in future.result():
-            results.put(word)
-        done_task = results.qsize()
-        progress_print(done_task, max_task, cpu)
+    word_list = set()
+    progress_print(0, max_task, concurrency)
+    while (len(word_list) + errors.qsize()) < max_task:
+        word = results.get()
+        word_list.add(word)
+        progress_print(len(word_list), max_task, concurrency)
 
-    results.sort(key=(lambda word: word.entry.form))
+    if errors.qsize() > 0:
+        while not errors.empty():
+            err = errors.get_nowait()
+            print(err)
 
-    assert(len(results) == len(dictionary.words))
-    return results
+    assert(errors.empty())
+    assert(len(word_list) == max_task)
+    return sorted(list(word_list), key=(lambda word: word.entry.form))
 
 
 def single_relationize(entry_dict, dictionary):
+    max_task = len(dictionary.words)
     results = set()
     progress_print(0, max_task, 1)
     for word in dictionary.words:
@@ -91,7 +104,7 @@ def single_relationize(entry_dict, dictionary):
     return sorted(list(results), key=(lambda word: word.entry.form))
 
 
-def worker(entry_dict, jobs, results):
+def worker(entry_dict, jobs, results, errors):
     while True:
         try:
             word = jobs.get()
@@ -99,7 +112,7 @@ def worker(entry_dict, jobs, results):
                 result = _worker(word, entry_dict)
                 results.put(result)
             except Exception as err:
-                raise err
+                errors.put(err)
         finally:
             jobs.task_done()
 
